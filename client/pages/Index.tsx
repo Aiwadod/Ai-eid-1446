@@ -37,7 +37,18 @@ export default function Index() {
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Main Heading */}
               <div className="text-center">
-                <h1 className="text-white font-arabic font-black text-3xl md:text-4xl lg:text-5xl leading-tight">
+                <h1
+                  style={{
+                    color: "#FFF",
+                    textAlign: "center",
+                    fontFamily:
+                      "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                    fontSize: "48px",
+                    fontStyle: "normal",
+                    fontWeight: "900",
+                    lineHeight: "normal",
+                  }}
+                >
                   <span style={{ whiteSpace: "preserve" }}>
                     أدخل الاسم الثنائي
                   </span>
