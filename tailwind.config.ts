@@ -14,7 +14,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        arabic: ["Cairo", "Amiri", "system-ui", "sans-serif"],
+        arabic: [
+          "Scheherazade New",
+          "Noto Naskh Arabic",
+          "Amiri",
+          "Cairo",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",

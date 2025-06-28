@@ -102,7 +102,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Cairo", "Amiri", system-ui, sans-serif;
+    font-family:
+      "Scheherazade New", "Noto Naskh Arabic", "Amiri", "Cairo", system-ui,
+      sans-serif;
   }
 }
 

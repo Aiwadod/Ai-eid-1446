@@ -20,11 +20,8 @@ export default function Index() {
         }}
       />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-blue-700 opacity-90" />
-
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
+      <div className="relative z-10 min-h-[849px] flex flex-col items-center justify-center px-4">
         {/* Logo */}
         <div className="mb-16 lg:mb-20">
           <img
@@ -41,7 +38,9 @@ export default function Index() {
               {/* Main Heading */}
               <div className="text-center">
                 <h1 className="text-white font-arabic font-black text-3xl md:text-4xl lg:text-5xl leading-tight">
-                  أدخل الاسم الثنائي
+                  <span style={{ whiteSpace: "preserve" }}>
+                    أدخل الاسم الثنائي
+                  </span>
                 </h1>
               </div>
 
