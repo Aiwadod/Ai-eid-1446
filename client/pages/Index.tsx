@@ -96,7 +96,7 @@ export default function Index() {
                 {showError && (
                   <div className="text-center">
                     <p className="text-red-500 font-arabic text-sm md:text-base font-medium">
-                      يرجى إدخال نص باللغة العربية فقط
+                      يا حياتي انقليش 🥺
                     </p>
                   </div>
                 )}
