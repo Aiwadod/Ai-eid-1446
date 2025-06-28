@@ -21,15 +21,18 @@ export default function Index() {
       />
 
       {/* Content */}
-      <div className="relative z-10 min-h-[849px] flex flex-col items-center justify-center px-4">
+      <div
+        className="relative z-10 min-h-[849px] flex flex-col items-center justify-center px-4"
+        style={{ marginTop: "-4px" }}
+      >
         {/* Logo */}
-        <div className="mb-16 lg:mb-20">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/85715676f15b8c93b0373cad75c744ef44dc219f?width=1009"
-            alt="Logo"
-            className="h-16 md:h-20 lg:h-22 w-auto object-contain"
-          />
-        </div>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/85715676f15b8c93b0373cad75c744ef44dc219f?width=1009"
+          alt="Logo"
+          className="h-16 md:h-20 lg:h-22 w-auto object-contain"
+          style={{ marginTop: "-2px" }}
+        />
+        <div className="mb-16 lg:mb-20"></div>
 
         {/* Main Card */}
         <div className="w-full max-w-2xl mx-auto">
