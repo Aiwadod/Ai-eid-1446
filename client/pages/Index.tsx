@@ -95,7 +95,17 @@ export default function Index() {
                 </div>
                 {showError && (
                   <div className="text-center">
-                    <p className="text-red-500 font-arabic text-sm md:text-base font-medium">
+                    <p
+                      style={{
+                        color: "#DF0000",
+                        fontFamily:
+                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                        fontSize: "20px",
+                        fontStyle: "normal",
+                        fontWeight: "500",
+                        lineHeight: "100.909%",
+                      }}
+                    >
                       يا حياتي انقليش 🥺
                     </p>
                   </div>
