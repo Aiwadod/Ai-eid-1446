@@ -2,9 +2,32 @@ import { useState } from "react";
 
 export default function Index() {
   const [name, setName] = useState("");
+  const [showError, setShowError] = useState(false);
+
+  const isArabicText = (text: string) => {
+    if (!text) return true; // Empty text is valid
+    // Arabic Unicode ranges: U+0600-U+06FF (Arabic), U+0750-U+077F (Arabic Supplement)
+    const arabicRegex = /^[\u0600-\u06FF\u0750-\u077F\s]+$/;
+    return arabicRegex.test(text);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setName(value);
+
+    if (value && !isArabicText(value)) {
+      setShowError(true);
+    } else {
+      setShowError(false);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isArabicText(name)) {
+      setShowError(true);
+      return;
+    }
     // Handle form submission
     console.log("Name submitted:", name);
   };
@@ -64,12 +87,19 @@ export default function Index() {
                   <input
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={handleInputChange}
                     placeholder="اسمك يهمنا!"
                     className="w-full bg-transparent border-none outline-none text-white placeholder-white/75 font-arabic text-lg md:text-xl text-right"
                     dir="rtl"
                   />
                 </div>
+                {showError && (
+                  <div className="text-center">
+                    <p className="text-red-500 font-arabic text-sm md:text-base font-medium">
+                      يرجى إدخال نص باللغة العربية فقط
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Submit Button */}
