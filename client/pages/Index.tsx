@@ -16,7 +16,7 @@ export default function Index() {
         className="absolute inset-0 w-full h-full bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://cdn.builder.io/api/v1/image/assets/TEMP/b37441c973e48eb00df249611cee60605f9128e1?width=3026')",
+            "url('https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fc705ee0fddff46eaaf94e055c0ae079a?format=webp&width=800')",
         }}
       />
 
