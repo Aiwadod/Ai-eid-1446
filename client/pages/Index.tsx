@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Index() {
   const [name, setName] = useState("");
   const [showError, setShowError] = useState(false);
-  const navigate = useNavigate();
 
   const isArabicText = (text: string) => {
     if (!text) return true; // Empty text is valid
