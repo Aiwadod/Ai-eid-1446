@@ -34,6 +34,10 @@ export default function Index() {
     // Handle form submission - log success or add your custom logic here
     console.log("تم تسجيل الاسم بنجاح:", name);
     alert(`أهلاً وسهلاً ${name}! تم تسجيل اسمك بنجاح.`);
+
+    // Clear the form data after successful submission
+    setName("");
+    setShowError(false);
   };
 
   return (
