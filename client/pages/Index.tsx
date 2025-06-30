@@ -50,7 +50,7 @@ export default function Index() {
 
       {/* Content */}
       <div
-        className="relative z-10 min-h-[849px] flex flex-col items-center justify-center px-4"
+        className="relative z-10 min-h-screen flex flex-col items-center justify-center px-3 sm:px-4 py-6 sm:py-8"
         style={{ marginTop: "-4px" }}
       >
         {/* Logo */}
@@ -60,7 +60,7 @@ export default function Index() {
           className="h-12 sm:h-16 md:h-20 lg:h-22 w-auto object-contain max-w-[90vw]"
           style={{ marginTop: "-2px" }}
         />
-        <div className="mb-16 lg:mb-20"></div>
+        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20"></div>
 
         {/* Main Card */}
         <div className="w-full max-w-2xl mx-auto px-4 sm:px-6">
