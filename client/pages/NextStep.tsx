@@ -62,6 +62,7 @@ export default function NextStep() {
                     fontStyle: "normal",
                     fontWeight: "700",
                     lineHeight: "normal",
+                    paddingRight: "-4px",
                   }}
                 >
                   هل انت من مستفيدين / اعضاء
