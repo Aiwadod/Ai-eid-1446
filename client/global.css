@@ -126,4 +126,22 @@
     backdrop-filter: blur(16.65px);
     -webkit-backdrop-filter: blur(16.65px);
   }
+
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Ensure proper viewport handling */
+  @supports (-webkit-touch-callout: none) {
+    .glass-input input {
+      transform: translateZ(0);
+    }
+  }
+
+  /* Prevent zoom on iOS */
+  @media screen and (max-width: 768px) {
+    input[type="text"] {
+      font-size: 16px !important;
+    }
+  }
 }

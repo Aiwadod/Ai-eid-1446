@@ -22,31 +22,31 @@ export default function NextStep() {
 
       {/* Content */}
       <div
-        className="relative z-10 min-h-[849px] flex flex-col items-center justify-center px-4"
+        className="relative z-10 min-h-screen flex flex-col items-center justify-center px-3 sm:px-4 py-6 sm:py-8"
         style={{ marginTop: "-4px" }}
       >
         {/* Logo */}
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/85715676f15b8c93b0373cad75c744ef44dc219f?width=1009"
           alt="Logo"
-          className="h-16 md:h-20 lg:h-22 w-auto object-contain"
+          className="h-12 sm:h-16 md:h-20 lg:h-22 w-auto object-contain max-w-[90vw]"
           style={{ marginTop: "-2px" }}
         />
-        <div className="mb-16 lg:mb-20"></div>
+        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20"></div>
 
         {/* Main Card */}
-        <div className="w-full max-w-2xl mx-auto">
-          <div className="glass rounded-3xl p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl">
+        <div className="w-full max-w-2xl mx-auto px-4 sm:px-6">
+          <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl">
             <div className="space-y-8 text-center">
               {/* Welcome Message */}
               <div>
                 <h1
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
                   style={{
                     color: "#FFF",
                     textAlign: "center",
                     fontFamily:
                       "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
-                    fontSize: "48px",
                     fontStyle: "normal",
                     fontWeight: "900",
                     lineHeight: "normal",
@@ -79,14 +79,14 @@ export default function NextStep() {
               <div className="flex justify-center pt-4">
                 <button
                   onClick={handleBack}
-                  className="glass-button rounded-full px-12 py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95"
+                  className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px]"
                 >
                   <span
+                    className="text-base sm:text-lg md:text-xl"
                     style={{
                       color: "rgba(255, 255, 255, 0.75)",
                       fontFamily:
                         "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
-                      fontSize: "20px",
                       fontStyle: "normal",
                       fontWeight: "500",
                       lineHeight: "normal",
