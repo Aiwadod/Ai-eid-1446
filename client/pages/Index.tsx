@@ -31,8 +31,9 @@ export default function Index() {
       setShowError(true);
       return;
     }
-    // Navigate to next step with the name
-    navigate("/next", { state: { name } });
+    // Handle form submission - log success or add your custom logic here
+    console.log("تم تسجيل الاسم بنجاح:", name);
+    alert(`أهلاً وسهلاً ${name}! تم تسجيل اسمك بنجاح.`);
   };
 
   return (
