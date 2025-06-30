@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Index() {
   const [name, setName] = useState("");
   const [showError, setShowError] = useState(false);
+  const navigate = useNavigate();
 
   const isArabicText = (text: string) => {
     if (!text) return true; // Empty text is valid
@@ -31,13 +33,8 @@ export default function Index() {
       setShowError(true);
       return;
     }
-    // Handle form submission - log success or add your custom logic here
-    console.log("تم تسجيل الاسم بنجاح:", name);
-    alert(`أهلاً وسهلاً ${name}! تم تسجيل اسمك بنجاح.`);
-
-    // Clear the form data after successful submission
-    setName("");
-    setShowError(false);
+    // Navigate to next step with the name
+    navigate("/next", { state: { name } });
   };
 
   return (
