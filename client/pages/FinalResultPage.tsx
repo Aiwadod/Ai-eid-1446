@@ -5,7 +5,8 @@ import html2canvas from "html2canvas";
 export default function FinalResultPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const name = location.state?.name || "";
   const selectedDesign = location.state?.selectedDesign || 0;
