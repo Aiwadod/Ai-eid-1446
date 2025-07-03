@@ -87,7 +87,13 @@ export default function AIClubPage() {
                     alt="تصميم الفوانيس"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-4 left-4 bg-blue-600/80 backdrop-blur-md rounded-lg px-3 py-2 border border-blue-400">
+                  <div
+                    className="absolute backdrop-blur-md rounded-lg px-3 py-2 bg-blue-600/80"
+                    style={{
+                      left: "43px",
+                      top: "56px",
+                    }}
+                  >
                     <span
                       style={{
                         color: "#FFF",
@@ -117,7 +123,7 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-blue-400">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2">
                     <span
                       style={{
                         color: "#FFF",
@@ -147,7 +153,14 @@ export default function AIClubPage() {
                     alt="تصميم المباني التراثية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-orange-400">
+                  <div
+                    className="absolute backdrop-blur-md rounded-lg px-4 py-2 bg-orange-600/80"
+                    style={{
+                      left: "95px",
+                      top: "311px",
+                      transform: "matrix(1, 0, 0, 1, -54.832, -33.5)",
+                    }}
+                  >
                     <span
                       style={{
                         color: "#FFF",
@@ -163,7 +176,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 4: الأطفال مع الخراف النهارية - نص في الأعلى مع خلفية بيضاء */}
+                {/* تصميم 4: ا��أطفال مع الخراف النهارية - نص في الأعلى مع خلفية بيضاء */}
                 <button
                   onClick={() => handleDesignSelect(3)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -177,7 +190,7 @@ export default function AIClubPage() {
                     alt="تصميم الأطفال مع الخراف النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md rounded-lg px-4 py-2 border border-gray-300">
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md rounded-lg px-4 py-2">
                     <span
                       style={{
                         color: "#333",
@@ -207,7 +220,7 @@ export default function AIClubPage() {
                     alt="تصميم النافورة الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-blue-400">
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2">
                     <span
                       style={{
                         color: "#FFF",
@@ -218,7 +231,7 @@ export default function AIClubPage() {
                         fontStyle: "normal",
                       }}
                     >
-                      {name || "ع��دالوهاب عبدالعزيز"}
+                      {name || "عبدالوهاب عبدالعزيز"}
                     </span>
                   </div>
                 </button>
@@ -237,7 +250,7 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية مع الأطفال"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-blue-400">
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2">
                     <span
                       style={{
                         color: "#FFF",
