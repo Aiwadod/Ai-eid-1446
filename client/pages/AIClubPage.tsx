@@ -235,7 +235,7 @@ export default function AIClubPage() {
                     className="absolute transform -translate-x-1/2"
                     style={{
                       top: "75px",
-                      left: "48%",
+                      left: "45%",
                     }}
                   >
                     <span
