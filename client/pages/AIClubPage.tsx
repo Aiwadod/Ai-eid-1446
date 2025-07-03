@@ -17,8 +17,34 @@ export default function AIClubPage() {
       alert("يرجى اختيار تصميم أولاً");
       return;
     }
-    console.log("Selected design:", selectedDesign);
-    alert(`تم اختيار التصميم رقم ${selectedDesign + 1}`);
+
+    const designImages = [
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0f6d408a380b4e768b567e471bda4422?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe7a8bc6e60074702a35620eb622af786?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F4573685d3b664853845521b00c7c1af4?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe51bcf82f4d14907a2aef17e28483c47?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fbf958ed6b18d4d95b00b7b6ff14f71dd?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F86886dbec71c4db7bac2e1c32e664c91?format=webp&width=800",
+    ];
+
+    const textPositions = [
+      { left: "45%", top: "18%", color: "#CD7D25" },
+      { left: "45.5%", top: "21.5%", color: "#FFF" },
+      { left: "96px", top: "306px", color: "#FFF" },
+      { left: "52%", top: "58px", color: "#FFF" },
+      { left: "45%", top: "65px", color: "#FFF" },
+      { left: "48%", top: "56px", color: "#FFF" },
+    ];
+
+    navigate("/final-result", {
+      state: {
+        name,
+        selectedOption,
+        selectedDesign,
+        designImages,
+        textPositions,
+      },
+    });
   };
 
   const handleDesignSelect = (designIndex: number) => {
