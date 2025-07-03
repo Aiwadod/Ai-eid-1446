@@ -17,8 +17,34 @@ export default function OtherDesignsPage() {
       alert("يرجى اختيار تصميم أولاً");
       return;
     }
-    console.log("Selected design:", selectedDesign);
-    alert(`تم اختيار التصميم رقم ${selectedDesign + 1}`);
+
+    const designImages = [
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F6eaba692d0cb43efa6cb4146c46da6cd?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe382ee81b4f543dfa715bd27f662d080?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F2262e547591344f0b2d8aaa805e39c19?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0a790e5233b14f1184fd4225f3fe4fc1?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F52b65e90e4684ca28f041fd9f404c133?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F96b53ae5f1eb40a1ae739dceab99b054?format=webp&width=800",
+    ];
+
+    const textPositions = [
+      { left: "45%", top: "18%", color: "#CD7D25" },
+      { left: "45.5%", top: "59px", color: "#FFF" },
+      { left: "94px", top: "83px", color: "#FFF" },
+      { left: "102px", top: "61px", color: "#FFF" },
+      { left: "116px", top: "55px", color: "#FFF" },
+      { left: "102px", top: "280px", color: "#FFF" },
+    ];
+
+    navigate("/final-result", {
+      state: {
+        name,
+        selectedOption,
+        selectedDesign,
+        designImages,
+        textPositions,
+      },
+    });
   };
 
   const handleDesignSelect = (designIndex: number) => {
@@ -198,7 +224,7 @@ export default function OtherDesignsPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0a790e5233b14f1184fd4225f3fe4fc1?format=webp&width=800"
-                    alt="تصميم ا��كرة ��لأرضية الليلية"
+                    alt="تصميم الكرة ��لأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
