@@ -1,31 +1,20 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function NextStep() {
+export default function AIClubPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const name = location.state?.name || "";
-  const [selectedOption, setSelectedOption] = useState<string>("");
+  const selectedOption = location.state?.selectedOption || "";
 
   const handleBack = () => {
-    navigate("/");
+    navigate("/next", { state: { name } });
   };
 
   const handleNext = () => {
-    if (!selectedOption) return;
-
-    // Navigate based on selection
-    if (selectedOption === "نادي الذكاء الاصطناعي") {
-      navigate("/ai-club", { state: { name, selectedOption } });
-    } else if (selectedOption === "غير ذالك") {
-      // Navigate to a different page for non-AI club members
-      console.log("Selected option:", selectedOption);
-      alert(`تم اختيار: ${selectedOption} - سيتم إضافة صفحة منفصلة`);
-    }
-  };
-
-  const handleOptionSelect = (option: string) => {
-    setSelectedOption(option);
+    // Handle next step logic here
+    console.log("Proceeding to next step...");
+    alert("الخطوة التالية...");
   };
 
   return (
@@ -44,7 +33,7 @@ export default function NextStep() {
         className="relative z-10 min-h-screen flex flex-col items-center justify-center px-3 sm:px-4 py-6 sm:py-8"
         style={{ marginTop: "-4px" }}
       >
-        {/* Logo */}
+        {/* Logo - ثابت كما طلبت */}
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/44601a5eb5d1394f281854f475784406e2daf9df?width=1009"
           alt="Logo"
@@ -53,10 +42,10 @@ export default function NextStep() {
         />
 
         {/* Main Card */}
-        <div className="w-full max-w-2xl mx-auto px-4 sm:px-6">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
           <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl">
             <div className="space-y-8">
-              {/* Main Question */}
+              {/* Welcome Message for AI Club Members */}
               <div className="text-center">
                 <h1
                   style={{
@@ -68,63 +57,70 @@ export default function NextStep() {
                     fontStyle: "normal",
                     fontWeight: "700",
                     lineHeight: "normal",
-                    paddingRight: "-4px",
-                    paddingLeft: "-3px",
                   }}
                 >
-                  هل انت من مستفيدين / اعضاء
+                  مرحباً {name} في نادي الذكاء الاصطناعي
                 </h1>
               </div>
 
-              {/* Options */}
-              <div className="space-y-4">
-                {/* AI Club Option */}
-                <button
-                  onClick={() => handleOptionSelect("نادي الذكاء الاصطناعي")}
-                  className={`w-full glass-input rounded-full px-6 py-4 md:px-8 md:py-5 border transition-all duration-200 ${
-                    selectedOption === "نادي الذكاء الاصطناعي"
-                      ? "border-white/60 bg-white/25"
-                      : "border-white/60 hover:border-white/45 hover:bg-white/20"
-                  }`}
-                >
+              {/* Content Grid - مكان للصور والمحتوى */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Placeholder للصور - سيتم استبدالها بالتصميم من Builder.io */}
+                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
                   <span
                     style={{
                       color: "rgba(255, 255, 255, 0.75)",
                       fontFamily:
                         "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
                       fontSize: "20px",
-                      fontStyle: "normal",
-                      fontWeight: "400",
-                      lineHeight: "100.909%",
+                      textAlign: "center",
                     }}
                   >
-                    نادي الذكاء الاصطناعي
+                    [مكان للصورة الأولى]
                   </span>
-                </button>
+                </div>
 
-                {/* Other Option */}
-                <button
-                  onClick={() => handleOptionSelect("غير ذالك")}
-                  className={`w-full glass-input rounded-full px-6 py-4 md:px-8 md:py-5 border transition-all duration-200 ${
-                    selectedOption === "غير ذالك"
-                      ? "border-white/60 bg-white/25"
-                      : "border-white/60 hover:border-white/45 hover:bg-white/20"
-                  }`}
-                >
+                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
                   <span
                     style={{
                       color: "rgba(255, 255, 255, 0.75)",
                       fontFamily:
                         "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
                       fontSize: "20px",
-                      fontStyle: "normal",
-                      fontWeight: "400",
-                      lineHeight: "100.909%",
+                      textAlign: "center",
                     }}
                   >
-                    غير ذالك
+                    [مكان للصورة الثانية]
                   </span>
-                </button>
+                </div>
+
+                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
+                  <span
+                    style={{
+                      color: "rgba(255, 255, 255, 0.75)",
+                      fontFamily:
+                        "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                      fontSize: "20px",
+                      textAlign: "center",
+                    }}
+                  >
+                    [مكان للصورة الثالثة]
+                  </span>
+                </div>
+
+                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
+                  <span
+                    style={{
+                      color: "rgba(255, 255, 255, 0.75)",
+                      fontFamily:
+                        "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                      fontSize: "20px",
+                      textAlign: "center",
+                    }}
+                  >
+                    [مكان للصورة الرابعة]
+                  </span>
+                </div>
               </div>
 
               {/* Navigation Buttons */}
@@ -152,12 +148,7 @@ export default function NextStep() {
                 {/* Next Button */}
                 <button
                   onClick={handleNext}
-                  disabled={!selectedOption}
-                  className={`glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px] ${
-                    selectedOption
-                      ? "hover:bg-white/20 cursor-pointer"
-                      : "opacity-50 cursor-not-allowed"
-                  }`}
+                  className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px]"
                 >
                   <span
                     style={{
