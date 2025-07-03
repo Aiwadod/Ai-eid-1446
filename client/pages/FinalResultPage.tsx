@@ -58,7 +58,7 @@ export default function FinalResultPage() {
         console.log("Download successful for:", name);
       } catch (error) {
         console.error("Download failed:", error);
-        alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
+        alert("حدث خطأ أ��ناء التحميل. يرجى المحاولة مرة أخرى.");
       }
     }, 500);
   };
@@ -310,8 +310,19 @@ export default function FinalResultPage() {
                 </div>
               </div>
 
-              {/* Hidden Canvas for Download */}
-              <canvas ref={canvasRef} style={{ display: "none" }} />
+              {/* Canvas for Download - Temporarily visible for debugging */}
+              <div className="mt-4 p-4 glass-input rounded-xl border border-white/30">
+                <p className="text-white text-center mb-2">معاينة التحميل:</p>
+                <canvas
+                  ref={canvasRef}
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    border: "1px solid rgba(255,255,255,0.3)",
+                    borderRadius: "8px",
+                  }}
+                />
+              </div>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row justify-center gap-4">
