@@ -53,7 +53,7 @@ export default function AIClubPage() {
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
           <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl">
             <div className="space-y-8">
-              {/* Welcome Message for AI Club Members */}
+              {/* Main Question */}
               <div className="text-center">
                 <h1
                   style={{
@@ -71,56 +71,181 @@ export default function AIClubPage() {
                 </h1>
               </div>
 
-              {/* Content Grid - مكان للص��ر والمحتوى */}
+              {/* Content Grid - تصاميم قابلة للاختيار */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Placeholder للصور - سيتم استبدالها بالتصميم من Builder.io */}
-                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                {/* تصميم 1: الفوانيس - نص في الأعلى يسار مع خلفية زرقاء */}
+                <button
+                  onClick={() => handleDesignSelect(0)}
+                  className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
+                    selectedDesign === 0
+                      ? "border-blue-400 border-2"
+                      : "border-white/30"
+                  }`}
+                >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0f6d408a380b4e768b567e471bda4422?format=webp&width=800"
-                    alt="عيد مبارك"
+                    alt="تصميم الفوانيس"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                </div>
+                  <div className="absolute top-4 left-4 bg-blue-600/80 backdrop-blur-md rounded-lg px-3 py-2 border border-blue-400">
+                    <span
+                      style={{
+                        color: "#FFF",
+                        fontFamily:
+                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {name || "عبدالوهاب عبدالعزيز"}
+                    </span>
+                  </div>
+                </button>
 
-                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                {/* تصميم 2: الكرة الأرضية الليلية - نص في الوسط مع خلفية زرقاء */}
+                <button
+                  onClick={() => handleDesignSelect(1)}
+                  className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
+                    selectedDesign === 1
+                      ? "border-blue-400 border-2"
+                      : "border-white/30"
+                  }`}
+                >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe7a8bc6e60074702a35620eb622af786?format=webp&width=800"
-                    alt="عيد مبارك"
+                    alt="تصميم الكرة الأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                </div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-blue-400">
+                    <span
+                      style={{
+                        color: "#FFF",
+                        fontFamily:
+                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {name || "عبدالوهاب عبدالعزيز"}
+                    </span>
+                  </div>
+                </button>
 
-                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                {/* تصميم 3: المباني التراثية - نص في الوسط مع خلفية ذهبية */}
+                <button
+                  onClick={() => handleDesignSelect(2)}
+                  className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
+                    selectedDesign === 2
+                      ? "border-orange-400 border-2"
+                      : "border-white/30"
+                  }`}
+                >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F4573685d3b664853845521b00c7c1af4?format=webp&width=800"
-                    alt="عيد مبارك"
+                    alt="تصميم المباني التراثية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                </div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-orange-400">
+                    <span
+                      style={{
+                        color: "#FFF",
+                        fontFamily:
+                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {name || "عبدالوهاب عبدالعزيز"}
+                    </span>
+                  </div>
+                </button>
 
-                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                {/* تصميم 4: الأطفال مع الخراف النهارية - نص في الأعلى مع خلفية بيضاء */}
+                <button
+                  onClick={() => handleDesignSelect(3)}
+                  className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
+                    selectedDesign === 3
+                      ? "border-white border-2"
+                      : "border-white/30"
+                  }`}
+                >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe51bcf82f4d14907a2aef17e28483c47?format=webp&width=800"
-                    alt="عيد مبارك"
+                    alt="تصميم الأطفال مع الخراف النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                </div>
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md rounded-lg px-4 py-2 border border-gray-300">
+                    <span
+                      style={{
+                        color: "#333",
+                        fontFamily:
+                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {name || "عبدالوهاب عبدالعزيز"}
+                    </span>
+                  </div>
+                </button>
 
-                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                {/* تصميم 5: النافورة الليلية - نص في الأسفل مع خلفية زرقاء */}
+                <button
+                  onClick={() => handleDesignSelect(4)}
+                  className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
+                    selectedDesign === 4
+                      ? "border-blue-400 border-2"
+                      : "border-white/30"
+                  }`}
+                >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fbf958ed6b18d4d95b00b7b6ff14f71dd?format=webp&width=800"
-                    alt="عيد مبارك"
+                    alt="تصميم النافورة الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                </div>
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-blue-400">
+                    <span
+                      style={{
+                        color: "#FFF",
+                        fontFamily:
+                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {name || "عبدالوهاب عبدالعزيز"}
+                    </span>
+                  </div>
+                </button>
 
-                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                {/* تصميم 6: الكرة الأرضية مع الأطفال - نص في الأعلى مع خلفية زرقاء */}
+                <button
+                  onClick={() => handleDesignSelect(5)}
+                  className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
+                    selectedDesign === 5
+                      ? "border-blue-400 border-2"
+                      : "border-white/30"
+                  }`}
+                >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F86886dbec71c4db7bac2e1c32e664c91?format=webp&width=800"
-                    alt="عيد مبارك"
+                    alt="تصميم الكرة الأرضية مع الأطفال"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                </div>
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2 border border-blue-400">
+                    <span
+                      style={{
+                        color: "#FFF",
+                        fontFamily:
+                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {name || "عبدالوهاب عبدالعزيز"}
+                    </span>
+                  </div>
+                </button>
               </div>
 
               {/* Navigation Buttons */}
