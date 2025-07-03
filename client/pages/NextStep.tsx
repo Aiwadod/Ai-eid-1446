@@ -70,7 +70,7 @@ export default function NextStep() {
                     paddingLeft: "-4px",
                   }}
                 >
-                  هل انت من مستفيدين / اعضاء
+                  هل انت من مستفيدين/ اعضاء
                 </h1>
               </div>
 
