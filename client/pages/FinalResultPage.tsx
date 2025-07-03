@@ -22,47 +22,50 @@ export default function FinalResultPage() {
     }
   };
 
-  const handleDownload = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) {
+  const handleDownload = async () => {
+    const imageElement = imageRef.current;
+    if (!imageElement) {
       alert("لم يتم العثور على التصميم. يرجى المحاولة مرة أخرى.");
       return;
     }
 
-    // Check if canvas has content
-    const ctx = canvas.getContext("2d");
-    const imageData = ctx?.getImageData(0, 0, canvas.width, canvas.height);
-    const hasContent = imageData?.data.some((pixel) => pixel !== 0);
+    setIsGenerating(true);
 
-    if (!hasContent) {
-      alert("يتم تحضير التصميم... يرجى الانتظار قليلاً ثم المحاولة مرة أخرى.");
-      return;
+    try {
+      // Wait for images to load
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      const canvas = await html2canvas(imageElement, {
+        useCORS: true,
+        allowTaint: false,
+        scale: 2, // Higher quality
+        backgroundColor: null,
+        logging: false,
+        onclone: (clonedDoc) => {
+          // Ensure all images are loaded in the cloned document
+          const images = clonedDoc.querySelectorAll("img");
+          images.forEach((img) => {
+            img.crossOrigin = "anonymous";
+          });
+        },
+      });
+
+      // Create download link
+      const dataURL = canvas.toDataURL("image/png", 1.0);
+      const link = document.createElement("a");
+      link.download = `eid-design-${name.replace(/\s+/g, "-") || "design"}.png`;
+      link.href = dataURL;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      console.log("Download successful for:", name);
+    } catch (error) {
+      console.error("Download failed:", error);
+      alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
+    } finally {
+      setIsGenerating(false);
     }
-
-    // Wait a moment to ensure canvas is fully rendered
-    setTimeout(() => {
-      try {
-        const dataURL = canvas.toDataURL("image/png", 1.0);
-
-        // Check if the dataURL is valid
-        if (dataURL === "data:,") {
-          alert("فشل في إنشاء الصورة. يرجى المحاولة مرة أخرى.");
-          return;
-        }
-
-        const link = document.createElement("a");
-        link.download = `eid-design-${name.replace(/\s+/g, "-") || "design"}.png`;
-        link.href = dataURL;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        console.log("Download successful for:", name);
-      } catch (error) {
-        console.error("Download failed:", error);
-        alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
-      }
-    }, 500);
   };
 
   const handleShare = () => {
