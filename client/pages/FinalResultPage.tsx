@@ -106,64 +106,30 @@ export default function FinalResultPage() {
     }
   };
 
-  const handleShare = async () => {
-    const imageElement = imageRef.current;
-    if (!imageElement) {
+  const handleShare = () => {
+    const canvas = canvasRef.current;
+    if (!canvas || !imageLoaded) {
       handleDownload();
       return;
     }
 
-    setIsGenerating(true);
+    canvas.toBlob((blob) => {
+      if (blob && navigator.share) {
+        const file = new File([blob], `eid-design-${name || "design"}.png`, {
+          type: "image/png",
+        });
 
-    try {
-      const canvas = await html2canvas(imageElement, {
-        useCORS: true,
-        allowTaint: false,
-        scale: 2,
-        backgroundColor: null,
-        logging: false,
-      });
-
-      canvas.toBlob(
-        (blob) => {
-          if (blob) {
-            if (navigator.share && navigator.canShare) {
-              const file = new File(
-                [blob],
-                `eid-design-${name || "design"}.png`,
-                {
-                  type: "image/png",
-                },
-              );
-
-              if (navigator.canShare({ files: [file] })) {
-                navigator
-                  .share({
-                    title: "تصميم عيد الأضحى المبارك",
-                    text: `تصميم عيد الأضحى المبارك - ${name}`,
-                    files: [file],
-                  })
-                  .catch((error) => {
-                    console.log("Error sharing:", error);
-                    handleDownload();
-                  });
-              } else {
-                handleDownload();
-              }
-            } else {
-              handleDownload();
-            }
-          }
-        },
-        "image/png",
-        1.0,
-      );
-    } catch (error) {
-      console.error("Share failed:", error);
-      handleDownload();
-    } finally {
-      setIsGenerating(false);
-    }
+        navigator
+          .share({
+            title: "تصميم عيد الأضحى المبارك",
+            text: `تصميم عيد الأضحى المبارك - ${name}`,
+            files: [file],
+          })
+          .catch(() => handleDownload());
+      } else {
+        handleDownload();
+      }
+    });
   };
 
   // No need for canvas useEffect - we'll use HTML elements directly
