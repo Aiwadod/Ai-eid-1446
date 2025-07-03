@@ -163,7 +163,7 @@ export default function AIClubPage() {
                     className="absolute"
                     style={{
                       left: "95px",
-                      top: "360px",
+                      top: "365px",
                       transform: "matrix(1, 0, 0, 1, -54.832, -33.5)",
                       padding: "7px 0 0 22px",
                       "@media (max-width: 640px)": {
