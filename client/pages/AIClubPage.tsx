@@ -105,7 +105,7 @@ export default function AIClubPage() {
                         fontStyle: "normal",
                       }}
                     >
-                      {name || "عبدالوهاب عبدالعزيز"}
+                      {name || "عبدالوهاب عبدالع��يز"}
                     </span>
                   </div>
                 </button>
@@ -201,10 +201,10 @@ export default function AIClubPage() {
                     alt="تصميم الأطفال مع الخراف النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute top-12 left-1/2 transform -translate-x-1/2">
                     <span
                       style={{
-                        color: "#333",
+                        color: "#FFF",
                         fontFamily:
                           "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
                         fontSize: "16px",
