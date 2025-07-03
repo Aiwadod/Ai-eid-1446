@@ -128,109 +128,7 @@ export default function FinalResultPage() {
     }
   };
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (
-      canvas &&
-      designImages[selectedDesign] &&
-      textPositions[selectedDesign] &&
-      name
-    ) {
-      const ctx = canvas.getContext("2d");
-      if (ctx) {
-        // Create a proxy URL to avoid CORS issues
-        const imageUrl = designImages[selectedDesign];
-
-        // Set fixed canvas size for consistent output
-        canvas.width = 800;
-        canvas.height = 800;
-
-        // Clear canvas first
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        const img = new Image();
-
-        img.onload = () => {
-          try {
-            // Draw the background image to fill the canvas
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-            // Add text overlay
-            const position = textPositions[selectedDesign];
-
-            // Set font properties for Arabic text
-            ctx.font = 'bold 32px Arial, "Helvetica Neue", sans-serif';
-            ctx.fillStyle = position.color || "#FFFFFF";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-
-            // Add text stroke for better visibility
-            ctx.strokeStyle = "rgba(0, 0, 0, 0.8)";
-            ctx.lineWidth = 3;
-
-            // Calculate position based on canvas size
-            let x = canvas.width / 2; // Default to center
-            let y = canvas.height / 2; // Default to center
-
-            // Handle percentage-based positions
-            if (
-              typeof position.left === "string" &&
-              position.left.includes("%")
-            ) {
-              x = (parseFloat(position.left) / 100) * canvas.width;
-            } else if (typeof position.left === "string") {
-              const leftValue = parseFloat(position.left.replace("px", ""));
-              x = (leftValue / 800) * canvas.width; // Scale to canvas size
-            } else if (typeof position.left === "number") {
-              x = (position.left / 800) * canvas.width; // Scale to canvas size
-            }
-
-            if (
-              typeof position.top === "string" &&
-              position.top.includes("%")
-            ) {
-              y = (parseFloat(position.top) / 100) * canvas.height;
-            } else if (typeof position.top === "string") {
-              const topValue = parseFloat(position.top.replace("px", ""));
-              y = (topValue / 800) * canvas.height; // Scale to canvas size
-            } else if (typeof position.top === "number") {
-              y = (position.top / 800) * canvas.height; // Scale to canvas size
-            }
-
-            // Ensure text is within canvas bounds with margin
-            const margin = 50;
-            x = Math.max(margin, Math.min(canvas.width - margin, x));
-            y = Math.max(margin, Math.min(canvas.height - margin, y));
-
-            // Draw text with stroke first, then fill
-            ctx.strokeText(name, x, y);
-            ctx.fillText(name, x, y);
-
-            console.log(
-              `Text "${name}" drawn at position (${x}, ${y}) with color ${position.color}`,
-            );
-          } catch (error) {
-            console.error("Error drawing on canvas:", error);
-          }
-        };
-
-        img.onerror = (error) => {
-          console.error("Failed to load image:", imageUrl, error);
-          // Draw fallback with text only
-          ctx.fillStyle = "#0066cc";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-          ctx.fillStyle = "#FFFFFF";
-          ctx.font = "bold 32px Arial";
-          ctx.textAlign = "center";
-          ctx.textBaseline = "middle";
-          ctx.fillText(name, canvas.width / 2, canvas.height / 2);
-        };
-
-        // Set image source without crossOrigin to avoid CORS issues
-        img.src = imageUrl;
-      }
-    }
-  }, [name, selectedDesign, designImages, textPositions]);
+  // No need for canvas useEffect - we'll use HTML elements directly
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -274,7 +172,7 @@ export default function FinalResultPage() {
                     lineHeight: "normal",
                   }}
                 >
-                  تم إنشاء تصميم�� بنجاح!
+                  تم إنشاء تصميمك بنجاح!
                 </h1>
                 <p
                   style={{
