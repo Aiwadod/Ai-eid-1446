@@ -59,12 +59,12 @@ export default function AIClubPage() {
                     lineHeight: "normal",
                   }}
                 >
-                  مرحباً {name} في نادي الذكاء الاصطناعي
+                  مرحباً {name} في نادي الذكاء الاصطنا��ي
                 </h1>
               </div>
 
               {/* Content Grid - مكان للصور والمحتوى */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Placeholder للصور - سيتم استبدالها بالتصميم من Builder.io */}
                 <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
                   <img
@@ -93,6 +93,22 @@ export default function AIClubPage() {
                 <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe51bcf82f4d14907a2aef17e28483c47?format=webp&width=800"
+                    alt="عيد مبارك"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                </div>
+
+                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fbf958ed6b18d4d95b00b7b6ff14f71dd?format=webp&width=800"
+                    alt="عيد مبارك"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                </div>
+
+                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F86886dbec71c4db7bac2e1c32e664c91?format=webp&width=800"
                     alt="عيد مبارك"
                     className="w-full h-full object-cover rounded-2xl"
                   />
