@@ -90,10 +90,10 @@ export default function AIClubPage() {
                   <div
                     className="absolute"
                     style={{
-                      left: "458.6739px",
-                      top: "362.3853px",
-                      width: "440.0879px",
-                      height: "46.4492px",
+                      left: "432.6153px",
+                      top: "363.81px",
+                      width: "300.8587px",
+                      height: "49.2985px",
                       transform: "translateX(-50%)",
                     }}
                   >
@@ -190,7 +190,7 @@ export default function AIClubPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe51bcf82f4d14907a2aef17e28483c47?format=webp&width=800"
-                    alt="تصميم الأطفال مع الخراف النهارية"
+                    alt="تصميم الأطفال مع الخراف ��لنهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
