@@ -88,7 +88,7 @@ export default function AIClubPage() {
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
-                    className="absolute backdrop-blur-md rounded-lg px-3 py-2 bg-blue-600/80"
+                    className="absolute"
                     style={{
                       left: "43px",
                       top: "56px",
@@ -102,6 +102,7 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -109,7 +110,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 2: الكرة الأرضية الليلية - نص في الوسط مع خلفية زرقاء */}
+                {/* تصميم 2: الكرة الأرضية الليلية - ��ص في الوسط مع خلفية زرقاء */}
                 <button
                   onClick={() => handleDesignSelect(1)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -123,7 +124,7 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <span
                       style={{
                         color: "#FFF",
@@ -132,6 +133,7 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -154,7 +156,7 @@ export default function AIClubPage() {
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
-                    className="absolute backdrop-blur-md rounded-lg px-4 py-2 bg-orange-600/80"
+                    className="absolute"
                     style={{
                       left: "95px",
                       top: "311px",
@@ -169,6 +171,7 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -176,7 +179,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 4: ا��أطفال مع الخراف النهارية - نص في الأعلى مع خلفية بيضاء */}
+                {/* تصميم 4: الأطفال مع الخراف النهارية - نص في الأعلى مع خلفية بيضاء */}
                 <button
                   onClick={() => handleDesignSelect(3)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -190,7 +193,7 @@ export default function AIClubPage() {
                     alt="تصميم الأطفال مع الخراف النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md rounded-lg px-4 py-2">
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
                     <span
                       style={{
                         color: "#333",
@@ -199,6 +202,7 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        textShadow: "1px 1px 2px rgba(255,255,255,0.8)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -220,7 +224,7 @@ export default function AIClubPage() {
                     alt="تصميم النافورة الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2">
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
                     <span
                       style={{
                         color: "#FFF",
@@ -229,6 +233,7 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -250,7 +255,7 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية مع الأطفال"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-blue-600/80 backdrop-blur-md rounded-lg px-4 py-2">
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
                     <span
                       style={{
                         color: "#FFF",
@@ -259,6 +264,7 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
