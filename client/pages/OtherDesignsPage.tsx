@@ -30,7 +30,7 @@ export default function OtherDesignsPage() {
     const textPositions = [
       { left: "45%", top: "18%", color: "#CD7D25" },
       { left: "45.5%", top: "59px", color: "#FFF" },
-      { left: "94px", top: "83px", color: "#FFF" },
+      { left: "116px", top: "83px", color: "#FFF" },
       { left: "102px", top: "61px", color: "#FFF" },
       { left: "116px", top: "55px", color: "#FFF" },
       { left: "102px", top: "280px", color: "#FFF" },
