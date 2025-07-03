@@ -52,7 +52,8 @@ export default function OtherDesignsPage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <>
+      <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center"
@@ -245,7 +246,7 @@ export default function OtherDesignsPage() {
                         fontStyle: "normal",
                       }}
                     >
-                      {name || "عبدالوهاب عبدالعزيز"}
+                      {name || "عبدالوهاب ع��دالعزيز"}
                     </span>
                   </div>
                 </button>
