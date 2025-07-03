@@ -257,7 +257,7 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية مع الأطفال"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute top-12 left-1/2 transform -translate-x-1/2">
                     <span
                       style={{
                         color: "#FFF",
