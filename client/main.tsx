@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NextStep from "./pages/NextStep";
 import AIClubPage from "./pages/AIClubPage";
 import OtherDesignsPage from "./pages/OtherDesignsPage";
+import FinalResultPage from "./pages/FinalResultPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
