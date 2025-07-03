@@ -201,7 +201,7 @@ export default function AIClubPage() {
                     alt="تصميم الأطفال مع الخراف النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-20 left-[52%] transform -translate-x-1/2">
+                  <div className="absolute top-[78px] left-[52%] transform -translate-x-1/2">
                     <span
                       style={{
                         color: "#FFF",
