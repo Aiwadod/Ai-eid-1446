@@ -162,11 +162,12 @@ export default function AIClubPage() {
                   <div
                     className="absolute"
                     style={{
-                      left: "116px",
-                      top: "308px",
+                      left: "96px",
+                      top: "306px",
                       transform: "matrix(1, 0, 0, 1, -54.832, -33.5)",
-                      width: "60px",
+                      width: "103px",
                       padding: "7px 0 0 19px",
+                      textAlign: "center",
                       "@media (max-width: 640px)": {
                         top: "370px",
                         left: "113px",
@@ -188,7 +189,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 4: الأطفال مع الخراف النهارية - نص في الأعلى */}
+                {/* تصميم 4: الأطفال مع الخراف ال��هارية - نص في الأعلى */}
                 <button
                   onClick={() => handleDesignSelect(3)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -265,7 +266,7 @@ export default function AIClubPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F86886dbec71c4db7bac2e1c32e664c91?format=webp&width=800"
-                    alt="تصميم الكرة الأرضية مع الأطفال"
+                    alt="تصميم الكرة الأرضية مع الأطف��ل"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
