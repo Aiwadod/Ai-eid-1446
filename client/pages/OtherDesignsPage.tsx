@@ -203,7 +203,7 @@ export default function OtherDesignsPage() {
                   <div
                     className="absolute transform -translate-x-1/2"
                     style={{
-                      left: "107px",
+                      left: "102px",
                       top: "61px",
                       paddingLeft: "-4px",
                     }}
