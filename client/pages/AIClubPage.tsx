@@ -73,7 +73,7 @@ export default function AIClubPage() {
 
               {/* Content Grid - تصاميم قابلة للاختيار */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* تصميم 1: الفوانيس - نص في الأعلى يسار مع خلفية زرقاء */}
+                {/* تصميم 1: الفوانيس - نص في الأعلى يسار */}
                 <button
                   onClick={() => handleDesignSelect(0)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -102,7 +102,6 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
-                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -110,7 +109,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 2: الكرة الأرضية الليلية - نص في الوسط مع خلفية زرقاء */}
+                {/* تصميم 2: الكرة الأرضية الليلية - نص في الوسط */}
                 <button
                   onClick={() => handleDesignSelect(1)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -133,7 +132,6 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
-                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -141,7 +139,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 3: المباني التراثية - نص في الوسط مع خلفية ذهبية */}
+                {/* تصميم 3: المباني التراثية - نص في الوسط */}
                 <button
                   onClick={() => handleDesignSelect(2)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -171,7 +169,6 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
-                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -179,7 +176,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 4: الأطفال مع الخراف النهارية - نص في الأعلى مع خلفية بيضاء */}
+                {/* تصميم 4: الأطفال مع الخراف النهارية - نص في الأعلى */}
                 <button
                   onClick={() => handleDesignSelect(3)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -209,7 +206,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 5: النافورة الليلية - نص في الأسفل مع خلفية زرقاء */}
+                {/* تصميم 5: النافورة الليلية - نص في الأسفل */}
                 <button
                   onClick={() => handleDesignSelect(4)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -232,7 +229,6 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
-                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -240,7 +236,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 6: الكرة الأرضية مع الأطفال - نص في الأعلى مع خلفية زرقاء */}
+                {/* تصميم 6: الكرة الأرضية مع الأطفال - نص في الأعلى */}
                 <button
                   onClick={() => handleDesignSelect(5)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -263,7 +259,6 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
-                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
