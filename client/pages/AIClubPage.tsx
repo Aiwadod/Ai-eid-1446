@@ -59,7 +59,7 @@ export default function AIClubPage() {
                     lineHeight: "normal",
                   }}
                 >
-                  مرحباً {name} في نادي الذكاء الاصطنا��ي
+                  <span>اختار التصميم الذي يناسبك</span>
                 </h1>
               </div>
 
