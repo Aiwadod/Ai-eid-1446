@@ -92,11 +92,12 @@ export default function AIClubPage() {
                     style={{
                       left: "43px",
                       top: "56px",
+                      paddingLeft: "26px",
                     }}
                   >
                     <span
                       style={{
-                        color: "#FFF",
+                        color: "#CD7D25",
                         fontFamily:
                           "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
                         fontSize: "16px",
