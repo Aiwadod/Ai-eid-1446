@@ -316,7 +316,7 @@ export default function OtherDesignsPage() {
                       lineHeight: "100.909%",
                     }}
                   >
-                    السا��ق
+                    السابق
                   </span>
                 </button>
 
