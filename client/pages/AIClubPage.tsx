@@ -66,60 +66,36 @@ export default function AIClubPage() {
               {/* Content Grid - مكان للصور والمحتوى */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Placeholder للصور - سيتم استبدالها بالتصميم من Builder.io */}
-                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
-                  <span
-                    style={{
-                      color: "rgba(255, 255, 255, 0.75)",
-                      fontFamily:
-                        "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
-                      fontSize: "20px",
-                      textAlign: "center",
-                    }}
-                  >
-                    [مكان للصورة الأولى]
-                  </span>
+                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0f6d408a380b4e768b567e471bda4422?format=webp&width=800"
+                    alt="عيد مبارك"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 </div>
 
-                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
-                  <span
-                    style={{
-                      color: "rgba(255, 255, 255, 0.75)",
-                      fontFamily:
-                        "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
-                      fontSize: "20px",
-                      textAlign: "center",
-                    }}
-                  >
-                    [مكان للصورة الثانية]
-                  </span>
+                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe7a8bc6e60074702a35620eb622af786?format=webp&width=800"
+                    alt="عيد مبارك"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 </div>
 
-                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
-                  <span
-                    style={{
-                      color: "rgba(255, 255, 255, 0.75)",
-                      fontFamily:
-                        "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
-                      fontSize: "20px",
-                      textAlign: "center",
-                    }}
-                  >
-                    [مكان للصورة الثالثة]
-                  </span>
+                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F4573685d3b664853845521b00c7c1af4?format=webp&width=800"
+                    alt="عيد مبارك"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 </div>
 
-                <div className="glass-input rounded-2xl p-6 border border-white/30 min-h-[200px] flex items-center justify-center">
-                  <span
-                    style={{
-                      color: "rgba(255, 255, 255, 0.75)",
-                      fontFamily:
-                        "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
-                      fontSize: "20px",
-                      textAlign: "center",
-                    }}
-                  >
-                    [مكان للصورة الرابعة]
-                  </span>
+                <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe51bcf82f4d14907a2aef17e28483c47?format=webp&width=800"
+                    alt="عيد مبارك"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 </div>
               </div>
 
