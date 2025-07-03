@@ -262,12 +262,7 @@ export default function FinalResultPage() {
                 {/* Share Button */}
                 <button
                   onClick={handleShare}
-                  disabled={isGenerating}
-                  className={`glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px] ${
-                    isGenerating
-                      ? "bg-gray-500/20 cursor-not-allowed opacity-50"
-                      : "bg-blue-500/20 hover:bg-blue-500/30 hover:bg-white/20"
-                  }`}
+                  className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px] bg-blue-500/20 hover:bg-blue-500/30"
                 >
                   <span
                     style={{
@@ -280,7 +275,7 @@ export default function FinalResultPage() {
                       lineHeight: "100.909%",
                     }}
                   >
-                    {isGenerating ? "جاري المعالجة..." : "مشاركة"}
+                    مشاركة
                   </span>
                 </button>
               </div>
