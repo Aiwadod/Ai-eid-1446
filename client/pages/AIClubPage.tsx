@@ -6,15 +6,23 @@ export default function AIClubPage() {
   const navigate = useNavigate();
   const name = location.state?.name || "";
   const selectedOption = location.state?.selectedOption || "";
+  const [selectedDesign, setSelectedDesign] = useState<number | null>(null);
 
   const handleBack = () => {
     navigate("/next", { state: { name } });
   };
 
   const handleNext = () => {
-    // Handle next step logic here
-    console.log("Proceeding to next step...");
-    alert("الخطوة التالية...");
+    if (selectedDesign === null) {
+      alert("يرجى اختيار تصميم أولاً");
+      return;
+    }
+    console.log("Selected design:", selectedDesign);
+    alert(`تم اختيار التصميم رقم ${selectedDesign + 1}`);
+  };
+
+  const handleDesignSelect = (designIndex: number) => {
+    setSelectedDesign(designIndex);
   };
 
   return (
@@ -63,9 +71,9 @@ export default function AIClubPage() {
                 </h1>
               </div>
 
-              {/* Content Grid - مكان للصور والمحتوى */}
+              {/* Content Grid - مكان للص��ر والمحتوى */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Placeholder للصور - سيتم استبدالها با��تصميم من Builder.io */}
+                {/* Placeholder للصور - سيتم استبدالها بالتصميم من Builder.io */}
                 <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0f6d408a380b4e768b567e471bda4422?format=webp&width=800"
@@ -140,7 +148,12 @@ export default function AIClubPage() {
                 {/* Next Button */}
                 <button
                   onClick={handleNext}
-                  className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px]"
+                  disabled={selectedDesign === null}
+                  className={`glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px] ${
+                    selectedDesign !== null
+                      ? "hover:bg-white/20 cursor-pointer"
+                      : "opacity-50 cursor-not-allowed"
+                  }`}
                 >
                   <span
                     style={{
