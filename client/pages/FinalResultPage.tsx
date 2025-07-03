@@ -132,8 +132,6 @@ export default function FinalResultPage() {
     });
   };
 
-  // No need for canvas useEffect - we'll use HTML elements directly
-
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}
