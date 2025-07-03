@@ -185,46 +185,34 @@ export default function FinalResultPage() {
                     marginTop: "16px",
                   }}
                 >
-                  عيد أضحى مبارك يا {name}
+                  عيد أضح�� مبارك يا {name}
                 </p>
               </div>
 
-              {/* Preview Card for Download */}
+              {/* Preview with Image and Text Overlay */}
               <div className="relative glass-input rounded-2xl p-4 border border-white/30">
-                <div
-                  ref={imageRef}
-                  className="relative w-[400px] h-[400px] mx-auto bg-white rounded-xl overflow-hidden"
-                  style={{ aspectRatio: "1/1" }}
-                >
-                  {designImages[selectedDesign] && (
+                <div className="relative w-[400px] h-[400px] mx-auto">
+                  {currentImage && currentPosition && (
                     <>
                       <img
-                        src={designImages[selectedDesign]}
+                        src={currentImage}
                         alt="تصميم عيد الأضحى"
-                        className="w-full h-full object-cover"
-                        crossOrigin="anonymous"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          display: "block",
-                        }}
+                        className="w-full h-full object-cover rounded-xl"
+                        onLoad={drawImageWithText}
                       />
-                      {/* Text overlay */}
+                      {/* Text overlay preview */}
                       <div
                         className="absolute pointer-events-none"
                         style={{
-                          left: textPositions[selectedDesign]?.left || "50%",
-                          top: textPositions[selectedDesign]?.top || "50%",
+                          left: currentPosition.left || "50%",
+                          top: currentPosition.top || "50%",
                           transform: "translateX(-50%)",
                           textAlign: "center",
-                          zIndex: 10,
                         }}
                       >
                         <span
                           style={{
-                            color:
-                              textPositions[selectedDesign]?.color || "#FFF",
+                            color: currentPosition.color || "#FFF",
                             fontFamily: "KO Aynama, Arial, sans-serif",
                             fontSize: "18px",
                             fontWeight: "bold",
@@ -239,12 +227,15 @@ export default function FinalResultPage() {
                     </>
                   )}
                 </div>
-                {isGenerating && (
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded-2xl">
-                    <p className="text-white">جاري إنشاء الصورة...</p>
-                  </div>
-                )}
               </div>
+
+              {/* Hidden Canvas for Download */}
+              <canvas
+                ref={canvasRef}
+                style={{ display: "none" }}
+                width={800}
+                height={800}
+              />
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row justify-center gap-4">
