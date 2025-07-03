@@ -22,23 +22,45 @@ export default function FinalResultPage() {
 
   const handleDownload = () => {
     const canvas = canvasRef.current;
-    if (canvas) {
-      // Wait a moment to ensure canvas is fully rendered
-      setTimeout(() => {
-        try {
-          const dataURL = canvas.toDataURL("image/png", 1.0);
-          const link = document.createElement("a");
-          link.download = `eid-design-${name || "design"}.png`;
-          link.href = dataURL;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } catch (error) {
-          console.error("Download failed:", error);
-          alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
-        }
-      }, 100);
+    if (!canvas) {
+      alert("لم يتم العثور على التصميم. يرجى المحاولة مرة أخرى.");
+      return;
     }
+
+    // Check if canvas has content
+    const ctx = canvas.getContext("2d");
+    const imageData = ctx?.getImageData(0, 0, canvas.width, canvas.height);
+    const hasContent = imageData?.data.some((pixel) => pixel !== 0);
+
+    if (!hasContent) {
+      alert("يتم تحضير التصميم... يرجى الانتظار قليلاً ثم المحاولة مرة أخرى.");
+      return;
+    }
+
+    // Wait a moment to ensure canvas is fully rendered
+    setTimeout(() => {
+      try {
+        const dataURL = canvas.toDataURL("image/png", 1.0);
+
+        // Check if the dataURL is valid
+        if (dataURL === "data:,") {
+          alert("فشل في إنشاء الصورة. يرجى المحاولة مرة أخرى.");
+          return;
+        }
+
+        const link = document.createElement("a");
+        link.download = `eid-design-${name.replace(/\s+/g, "-") || "design"}.png`;
+        link.href = dataURL;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        console.log("Download successful for:", name);
+      } catch (error) {
+        console.error("Download failed:", error);
+        alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
+      }
+    }, 500);
   };
 
   const handleShare = () => {
