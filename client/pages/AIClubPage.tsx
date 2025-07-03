@@ -124,7 +124,12 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-[22%] left-[47%] transform -translate-x-1/2 -translate-y-1/2">
+                  <div
+                    className="absolute top-[22%] left-[47%] transform -translate-x-1/2 -translate-y-1/2"
+                    style={{
+                      padding: "-4px 0 0 -5px",
+                    }}
+                  >
                     <span
                       style={{
                         color: "#FFF",
@@ -207,7 +212,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 5: النافورة الليلية - نص في الأسفل */}
+                {/* تصميم 5: النافو��ة الليلية - نص في الأسفل */}
                 <button
                   onClick={() => handleDesignSelect(4)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
