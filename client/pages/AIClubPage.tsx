@@ -156,7 +156,7 @@ export default function AIClubPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F4573685d3b664853845521b00c7c1af4?format=webp&width=800"
-                    alt="تصميم المباني التراثية"
+                    alt="تصميم المب��ني التراثية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
@@ -257,7 +257,12 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية مع الأطفال"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-14 left-1/2 transform -translate-x-1/2">
+                  <div
+                    className="absolute top-14 left-1/2 transform -translate-x-1/2"
+                    style={{
+                      paddingLeft: "-5px",
+                    }}
+                  >
                     <span
                       style={{
                         color: "#FFF",
