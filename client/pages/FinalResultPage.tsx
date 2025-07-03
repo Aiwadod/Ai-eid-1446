@@ -67,36 +67,66 @@ export default function FinalResultPage() {
         const img = new Image();
         img.crossOrigin = "anonymous";
         img.onload = () => {
+          // Set canvas size to match image
           canvas.width = img.width;
           canvas.height = img.height;
 
-          // Draw the image
-          ctx.drawImage(img, 0, 0);
+          // Draw the background image
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
           // Add text overlay
           const position = textPositions[selectedDesign];
-          ctx.font = '32px "KO Aynama", Arial, sans-serif';
+
+          // Set font properties
+          ctx.font = "bold 24px Arial, sans-serif";
           ctx.fillStyle = position.color || "#FFFFFF";
           ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
 
-          // Calculate position
-          let x = position.left;
-          let y = position.top;
+          // Add text stroke for better visibility
+          ctx.strokeStyle = "rgba(0, 0, 0, 0.5)";
+          ctx.lineWidth = 2;
 
-          if (typeof x === "string" && x.includes("%")) {
-            x = (parseFloat(x) / 100) * canvas.width;
-          } else if (typeof x === "string") {
-            x = parseFloat(x);
+          // Calculate position based on canvas size
+          let x = 0;
+          let y = 0;
+
+          if (
+            typeof position.left === "string" &&
+            position.left.includes("%")
+          ) {
+            x = (parseFloat(position.left) / 100) * canvas.width;
+          } else if (typeof position.left === "string") {
+            x = parseFloat(position.left);
+          } else {
+            x = position.left;
           }
 
-          if (typeof y === "string" && y.includes("%")) {
-            y = (parseFloat(y) / 100) * canvas.height;
-          } else if (typeof y === "string") {
-            y = parseFloat(y);
+          if (typeof position.top === "string" && position.top.includes("%")) {
+            y = (parseFloat(position.top) / 100) * canvas.height;
+          } else if (typeof position.top === "string") {
+            y = parseFloat(position.top.replace("px", ""));
+          } else {
+            y = position.top;
           }
 
+          // Ensure text is within canvas bounds
+          if (x < 0) x = canvas.width / 2;
+          if (y < 0) y = canvas.height / 2;
+          if (x > canvas.width) x = canvas.width / 2;
+          if (y > canvas.height) y = canvas.height / 2;
+
+          // Draw text with stroke first, then fill
+          if (ctx.lineWidth > 0) {
+            ctx.strokeText(name, x, y);
+          }
           ctx.fillText(name, x, y);
         };
+
+        img.onerror = () => {
+          console.error("Failed to load image:", designImages[selectedDesign]);
+        };
+
         img.src = designImages[selectedDesign];
       }
     }
