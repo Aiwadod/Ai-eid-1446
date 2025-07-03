@@ -187,35 +187,48 @@ export default function FinalResultPage() {
                 </p>
               </div>
 
-              {/* Preview Card */}
+              {/* Preview Card for Download */}
               <div className="relative glass-input rounded-2xl p-4 border border-white/30">
-                <div className="relative aspect-square max-w-md mx-auto">
+                <div
+                  ref={imageRef}
+                  className="relative w-[400px] h-[400px] mx-auto bg-white rounded-xl overflow-hidden"
+                  style={{ aspectRatio: "1/1" }}
+                >
                   {designImages[selectedDesign] && (
                     <>
                       <img
                         src={designImages[selectedDesign]}
                         alt="تصميم عيد الأضحى"
-                        className="w-full h-full object-cover rounded-xl"
+                        className="w-full h-full object-cover"
+                        crossOrigin="anonymous"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          display: "block",
+                        }}
                       />
-                      {/* Text overlay preview */}
+                      {/* Text overlay */}
                       <div
-                        className="absolute"
+                        className="absolute pointer-events-none"
                         style={{
                           left: textPositions[selectedDesign]?.left || "50%",
                           top: textPositions[selectedDesign]?.top || "50%",
                           transform: "translateX(-50%)",
                           textAlign: "center",
+                          zIndex: 10,
                         }}
                       >
                         <span
                           style={{
                             color:
                               textPositions[selectedDesign]?.color || "#FFF",
-                            fontFamily:
-                              "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
-                            fontSize: "16px",
-                            fontWeight: "500",
-                            fontStyle: "normal",
+                            fontFamily: "KO Aynama, Arial, sans-serif",
+                            fontSize: "18px",
+                            fontWeight: "bold",
+                            textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
+                            display: "block",
+                            whiteSpace: "nowrap",
                           }}
                         >
                           {name}
@@ -224,20 +237,11 @@ export default function FinalResultPage() {
                     </>
                   )}
                 </div>
-              </div>
-
-              {/* Canvas for Download - Temporarily visible for debugging */}
-              <div className="mt-4 p-4 glass-input rounded-xl border border-white/30">
-                <p className="text-white text-center mb-2">معاينة التحميل:</p>
-                <canvas
-                  ref={canvasRef}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                    border: "1px solid rgba(255,255,255,0.3)",
-                    borderRadius: "8px",
-                  }}
-                />
+                {isGenerating && (
+                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded-2xl">
+                    <p className="text-white">جاري إنشاء الصورة...</p>
+                  </div>
+                )}
               </div>
 
               {/* Action Buttons */}
