@@ -127,7 +127,7 @@ export default function AIClubPage() {
                   <div
                     className="absolute top-[21.5%] left-[47%] transform -translate-x-1/2 -translate-y-1/2"
                     style={{
-                      padding: "-4px 0 0 -5px",
+                      paddingLeft: "-5px",
                     }}
                   >
                     <span
