@@ -59,13 +59,13 @@ export default function AIClubPage() {
                     lineHeight: "normal",
                   }}
                 >
-                  <span>اختار التصميم الذي يناسبك</span>
+                  <p> : اختار التصميم الذي يناسبك</p>
                 </h1>
               </div>
 
               {/* Content Grid - مكان للصور والمحتوى */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Placeholder للصور - سيتم استبدالها بالتصميم من Builder.io */}
+                {/* Placeholder للص��ر - سيتم استبدالها بالتصميم من Builder.io */}
                 <div className="glass-input rounded-2xl p-0 border border-white/30 min-h-[300px] overflow-hidden">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0f6d408a380b4e768b567e471bda4422?format=webp&width=800"
