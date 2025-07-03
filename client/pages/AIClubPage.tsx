@@ -121,9 +121,10 @@ export default function AIClubPage() {
                       style={{
                         color: "#FFF",
                         fontFamily:
-                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                          "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
                         fontSize: "16px",
                         fontWeight: "500",
+                        fontStyle: "normal",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -150,9 +151,10 @@ export default function AIClubPage() {
                       style={{
                         color: "#FFF",
                         fontFamily:
-                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                          "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
                         fontSize: "16px",
                         fontWeight: "500",
+                        fontStyle: "normal",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -179,9 +181,10 @@ export default function AIClubPage() {
                       style={{
                         color: "#333",
                         fontFamily:
-                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                          "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
                         fontSize: "16px",
                         fontWeight: "500",
+                        fontStyle: "normal",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -208,9 +211,10 @@ export default function AIClubPage() {
                       style={{
                         color: "#FFF",
                         fontFamily:
-                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                          "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
                         fontSize: "16px",
                         fontWeight: "500",
+                        fontStyle: "normal",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -237,9 +241,10 @@ export default function AIClubPage() {
                       style={{
                         color: "#FFF",
                         fontFamily:
-                          "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                          "KO Aynama, Amiri, Scheherazade New, Noto Naskh Arabic, Cairo, system-ui, sans-serif",
                         fontSize: "16px",
                         fontWeight: "500",
+                        fontStyle: "normal",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
