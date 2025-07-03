@@ -61,7 +61,7 @@ export default function FinalResultPage() {
                   if (navigator.canShare({ files: [file] })) {
                     navigator
                       .share({
-                        title: "تصميم عيد الأضحى المبا��ك",
+                        title: "تصميم عيد الأضحى المبارك",
                         text: `تصميم عيد الأضحى المبارك - ${name}`,
                         files: [file],
                       })
@@ -93,74 +93,101 @@ export default function FinalResultPage() {
     if (
       canvas &&
       designImages[selectedDesign] &&
-      textPositions[selectedDesign]
+      textPositions[selectedDesign] &&
+      name
     ) {
       const ctx = canvas.getContext("2d");
       if (ctx) {
+        // Create a proxy URL to avoid CORS issues
+        const imageUrl = designImages[selectedDesign];
+
+        // Set fixed canvas size for consistent output
+        canvas.width = 800;
+        canvas.height = 800;
+
+        // Clear canvas first
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         const img = new Image();
-        img.crossOrigin = "anonymous";
+
         img.onload = () => {
-          // Set canvas size to match image
-          canvas.width = img.width;
-          canvas.height = img.height;
+          try {
+            // Draw the background image to fill the canvas
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          // Draw the background image
-          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            // Add text overlay
+            const position = textPositions[selectedDesign];
 
-          // Add text overlay
-          const position = textPositions[selectedDesign];
+            // Set font properties for Arabic text
+            ctx.font = 'bold 32px Arial, "Helvetica Neue", sans-serif';
+            ctx.fillStyle = position.color || "#FFFFFF";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
 
-          // Set font properties
-          ctx.font = "bold 24px Arial, sans-serif";
-          ctx.fillStyle = position.color || "#FFFFFF";
+            // Add text stroke for better visibility
+            ctx.strokeStyle = "rgba(0, 0, 0, 0.8)";
+            ctx.lineWidth = 3;
+
+            // Calculate position based on canvas size
+            let x = canvas.width / 2; // Default to center
+            let y = canvas.height / 2; // Default to center
+
+            // Handle percentage-based positions
+            if (
+              typeof position.left === "string" &&
+              position.left.includes("%")
+            ) {
+              x = (parseFloat(position.left) / 100) * canvas.width;
+            } else if (typeof position.left === "string") {
+              const leftValue = parseFloat(position.left.replace("px", ""));
+              x = (leftValue / 800) * canvas.width; // Scale to canvas size
+            } else if (typeof position.left === "number") {
+              x = (position.left / 800) * canvas.width; // Scale to canvas size
+            }
+
+            if (
+              typeof position.top === "string" &&
+              position.top.includes("%")
+            ) {
+              y = (parseFloat(position.top) / 100) * canvas.height;
+            } else if (typeof position.top === "string") {
+              const topValue = parseFloat(position.top.replace("px", ""));
+              y = (topValue / 800) * canvas.height; // Scale to canvas size
+            } else if (typeof position.top === "number") {
+              y = (position.top / 800) * canvas.height; // Scale to canvas size
+            }
+
+            // Ensure text is within canvas bounds with margin
+            const margin = 50;
+            x = Math.max(margin, Math.min(canvas.width - margin, x));
+            y = Math.max(margin, Math.min(canvas.height - margin, y));
+
+            // Draw text with stroke first, then fill
+            ctx.strokeText(name, x, y);
+            ctx.fillText(name, x, y);
+
+            console.log(
+              `Text "${name}" drawn at position (${x}, ${y}) with color ${position.color}`,
+            );
+          } catch (error) {
+            console.error("Error drawing on canvas:", error);
+          }
+        };
+
+        img.onerror = (error) => {
+          console.error("Failed to load image:", imageUrl, error);
+          // Draw fallback with text only
+          ctx.fillStyle = "#0066cc";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "#FFFFFF";
+          ctx.font = "bold 32px Arial";
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-
-          // Add text stroke for better visibility
-          ctx.strokeStyle = "rgba(0, 0, 0, 0.5)";
-          ctx.lineWidth = 2;
-
-          // Calculate position based on canvas size
-          let x = 0;
-          let y = 0;
-
-          if (
-            typeof position.left === "string" &&
-            position.left.includes("%")
-          ) {
-            x = (parseFloat(position.left) / 100) * canvas.width;
-          } else if (typeof position.left === "string") {
-            x = parseFloat(position.left);
-          } else {
-            x = position.left;
-          }
-
-          if (typeof position.top === "string" && position.top.includes("%")) {
-            y = (parseFloat(position.top) / 100) * canvas.height;
-          } else if (typeof position.top === "string") {
-            y = parseFloat(position.top.replace("px", ""));
-          } else {
-            y = position.top;
-          }
-
-          // Ensure text is within canvas bounds
-          if (x < 0) x = canvas.width / 2;
-          if (y < 0) y = canvas.height / 2;
-          if (x > canvas.width) x = canvas.width / 2;
-          if (y > canvas.height) y = canvas.height / 2;
-
-          // Draw text with stroke first, then fill
-          if (ctx.lineWidth > 0) {
-            ctx.strokeText(name, x, y);
-          }
-          ctx.fillText(name, x, y);
+          ctx.fillText(name, canvas.width / 2, canvas.height / 2);
         };
 
-        img.onerror = () => {
-          console.error("Failed to load image:", designImages[selectedDesign]);
-        };
-
-        img.src = designImages[selectedDesign];
+        // Set image source without crossOrigin to avoid CORS issues
+        img.src = imageUrl;
       }
     }
   }, [name, selectedDesign, designImages, textPositions]);
