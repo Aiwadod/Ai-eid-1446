@@ -20,6 +20,63 @@ export default function FinalResultPage() {
   const currentImage = designImages[selectedDesign];
   const currentPosition = textPositions[selectedDesign];
 
+  const drawImageWithText = () => {
+    const canvas = canvasRef.current;
+    if (!canvas || !currentImage || !currentPosition || !name) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const img = new Image();
+    img.onload = () => {
+      // Set canvas size
+      canvas.width = 800;
+      canvas.height = 800;
+
+      // Draw background image
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      // Draw text
+      ctx.font = "bold 28px Arial, sans-serif";
+      ctx.fillStyle = currentPosition.color || "#FFFFFF";
+      ctx.strokeStyle = "rgba(0, 0, 0, 0.8)";
+      ctx.lineWidth = 2;
+      ctx.textAlign = "center";
+
+      // Calculate text position
+      let x = canvas.width / 2;
+      let y = canvas.height / 2;
+
+      if (
+        typeof currentPosition.left === "string" &&
+        currentPosition.left.includes("%")
+      ) {
+        x = (parseFloat(currentPosition.left) / 100) * canvas.width;
+      } else if (typeof currentPosition.left === "string") {
+        x = (parseFloat(currentPosition.left) / 800) * canvas.width;
+      }
+
+      if (
+        typeof currentPosition.top === "string" &&
+        currentPosition.top.includes("%")
+      ) {
+        y = (parseFloat(currentPosition.top) / 100) * canvas.height;
+      } else if (typeof currentPosition.top === "string") {
+        y =
+          (parseFloat(currentPosition.top.replace("px", "")) / 800) *
+          canvas.height;
+      }
+
+      // Draw text with stroke and fill
+      ctx.strokeText(name, x, y);
+      ctx.fillText(name, x, y);
+
+      setImageLoaded(true);
+    };
+
+    img.src = currentImage;
+  };
+
   const handleBack = () => {
     if (selectedOption === "نادي الذكاء الاصطناعي") {
       navigate("/ai-club", { state: { name, selectedOption } });
