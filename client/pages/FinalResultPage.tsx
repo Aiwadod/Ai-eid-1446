@@ -1,18 +1,24 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
-import html2canvas from "html2canvas";
+import { useRef, useState } from "react";
 
 export default function FinalResultPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const imageRef = useRef<HTMLDivElement>(null);
-  const [isGenerating, setIsGenerating] = useState(false);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const name = location.state?.name || "";
-  const selectedDesign = location.state?.selectedDesign || 0;
+  const selectedDesign =
+    location.state?.selectedDesign !== undefined
+      ? location.state.selectedDesign
+      : 0;
   const selectedOption = location.state?.selectedOption || "";
   const designImages = location.state?.designImages || [];
   const textPositions = location.state?.textPositions || [];
+
+  // Get current design data
+  const currentImage = designImages[selectedDesign];
+  const currentPosition = textPositions[selectedDesign];
 
   const handleBack = () => {
     if (selectedOption === "نادي الذكاء الاصطناعي") {
