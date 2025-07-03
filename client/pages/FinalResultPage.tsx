@@ -68,50 +68,63 @@ export default function FinalResultPage() {
     }
   };
 
-  const handleShare = () => {
-    const canvas = canvasRef.current;
-    if (canvas) {
-      setTimeout(() => {
-        try {
-          canvas.toBlob(
-            (blob) => {
-              if (blob) {
-                if (navigator.share && navigator.canShare) {
-                  const file = new File(
-                    [blob],
-                    `eid-design-${name || "design"}.png`,
-                    {
-                      type: "image/png",
-                    },
-                  );
+  const handleShare = async () => {
+    const imageElement = imageRef.current;
+    if (!imageElement) {
+      handleDownload();
+      return;
+    }
 
-                  if (navigator.canShare({ files: [file] })) {
-                    navigator
-                      .share({
-                        title: "تصميم عيد الأضحى المبارك",
-                        text: `تصميم عيد الأضحى المبارك - ${name}`,
-                        files: [file],
-                      })
-                      .catch((error) => {
-                        console.log("Error sharing:", error);
-                        handleDownload(); // Fallback to download
-                      });
-                  } else {
-                    handleDownload(); // Fallback to download
-                  }
-                } else {
-                  handleDownload(); // Fallback to download
-                }
+    setIsGenerating(true);
+
+    try {
+      const canvas = await html2canvas(imageElement, {
+        useCORS: true,
+        allowTaint: false,
+        scale: 2,
+        backgroundColor: null,
+        logging: false,
+      });
+
+      canvas.toBlob(
+        (blob) => {
+          if (blob) {
+            if (navigator.share && navigator.canShare) {
+              const file = new File(
+                [blob],
+                `eid-design-${name || "design"}.png`,
+                {
+                  type: "image/png",
+                },
+              );
+
+              if (navigator.canShare({ files: [file] })) {
+                navigator
+                  .share({
+                    title: "تصميم عيد الأضحى المبارك",
+                    text: `تصميم عيد الأضحى المبارك - ${name}`,
+                    files: [file],
+                  })
+                  .catch((error) => {
+                    console.log("Error sharing:", error);
+                    handleDownload();
+                  });
+              } else {
+                handleDownload();
               }
-            },
-            "image/png",
-            1.0,
-          );
-        } catch (error) {
-          console.error("Share failed:", error);
-          handleDownload(); // Fallback to download
-        }
-      }, 100);
+            } else {
+              handleDownload();
+            }
+          }
+        },
+        "image/png",
+        1.0,
+      );
+    } catch (error) {
+      console.error("Share failed:", error);
+      handleDownload();
+    } finally {
+      setIsGenerating(false);
     }
   };
 
@@ -261,7 +274,7 @@ export default function FinalResultPage() {
                     lineHeight: "normal",
                   }}
                 >
-                  تم إنشاء تصميمك بنجاح!
+                  تم إنشاء تصميم�� بنجاح!
                 </h1>
                 <p
                   style={{
