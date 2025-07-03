@@ -90,9 +90,10 @@ export default function AIClubPage() {
                   <div
                     className="absolute"
                     style={{
-                      left: "50%",
-                      top: "25%",
+                      left: "458.6739px",
+                      top: "362.3853px",
                       transform: "translateX(-50%)",
+                      paddingTop: "-1px",
                     }}
                   >
                     <span
