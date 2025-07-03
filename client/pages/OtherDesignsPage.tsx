@@ -277,9 +277,9 @@ export default function OtherDesignsPage() {
                   <div
                     className="absolute transform -translate-x-1/2"
                     style={{
-                      top: "56px",
-                      left: "48%",
-                      paddingLeft: "-5px",
+                      left: "120px",
+                      top: "280px",
+                      padding: "-4px 0 0 2px",
                     }}
                   >
                     <span
