@@ -124,7 +124,7 @@ export default function AIClubPage() {
                     alt="تصميم الكرة الأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-[22%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="absolute top-[22%] left-[47%] transform -translate-x-1/2 -translate-y-1/2">
                     <span
                       style={{
                         color: "#FFF",
