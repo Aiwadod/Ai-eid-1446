@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NextStep from "./pages/NextStep";
 import AIClubPage from "./pages/AIClubPage";
+import OtherDesignsPage from "./pages/OtherDesignsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
