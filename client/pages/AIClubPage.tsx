@@ -127,7 +127,7 @@ export default function AIClubPage() {
                   <div
                     className="absolute top-[21.5%] left-[45.5%] transform -translate-x-1/2 -translate-y-1/2"
                     style={{
-                      paddingLeft: "-5px",
+                      paddingLeft: "-3px",
                     }}
                   >
                     <span
@@ -145,7 +145,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 3: المباني التراثية - نص في الوسط */}
+                {/* تصميم 3: المباني التراثية - نص في ا��وسط */}
                 <button
                   onClick={() => handleDesignSelect(2)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
