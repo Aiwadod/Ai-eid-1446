@@ -94,6 +94,7 @@ export default function OtherDesignsPage() {
                       top: "18%",
                       transform: "translateX(-50%)",
                       paddingLeft: "4px",
+                      textAlign: "center",
                     }}
                   >
                     <span
@@ -197,7 +198,7 @@ export default function OtherDesignsPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0a790e5233b14f1184fd4225f3fe4fc1?format=webp&width=800"
-                    alt="تصميم الكرة ��لأرضية الليلية"
+                    alt="تصميم ا��كرة ��لأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
