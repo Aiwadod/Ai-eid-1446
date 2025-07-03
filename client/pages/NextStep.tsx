@@ -18,9 +18,7 @@ export default function NextStep() {
     if (selectedOption === "نادي الذكاء الاصطناعي") {
       navigate("/ai-club", { state: { name, selectedOption } });
     } else if (selectedOption === "غير ذالك") {
-      // Navigate to a different page for non-AI club members
-      console.log("Selected option:", selectedOption);
-      alert(`تم اختيار: ${selectedOption} - سيتم إضافة صفحة منفصلة`);
+      navigate("/other-designs", { state: { name, selectedOption } });
     }
   };
 
