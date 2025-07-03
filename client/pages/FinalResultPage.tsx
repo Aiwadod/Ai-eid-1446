@@ -85,35 +85,14 @@ export default function FinalResultPage() {
     }
   };
 
-  const handleDownload = async () => {
-    const imageElement = imageRef.current;
-    if (!imageElement) {
-      alert("لم يتم العثور على التصميم. يرجى المحاولة مرة أخرى.");
+  const handleDownload = () => {
+    const canvas = canvasRef.current;
+    if (!canvas || !imageLoaded) {
+      alert("يرجى الانتظار حتى يتم تحميل الصورة أولاً");
       return;
     }
 
-    setIsGenerating(true);
-
     try {
-      // Wait for images to load
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      const canvas = await html2canvas(imageElement, {
-        useCORS: true,
-        allowTaint: false,
-        scale: 2, // Higher quality
-        backgroundColor: null,
-        logging: false,
-        onclone: (clonedDoc) => {
-          // Ensure all images are loaded in the cloned document
-          const images = clonedDoc.querySelectorAll("img");
-          images.forEach((img) => {
-            img.crossOrigin = "anonymous";
-          });
-        },
-      });
-
-      // Create download link
       const dataURL = canvas.toDataURL("image/png", 1.0);
       const link = document.createElement("a");
       link.download = `eid-design-${name.replace(/\s+/g, "-") || "design"}.png`;
@@ -121,13 +100,9 @@ export default function FinalResultPage() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      console.log("Download successful for:", name);
     } catch (error) {
       console.error("Download failed:", error);
       alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
-    } finally {
-      setIsGenerating(false);
     }
   };
 
