@@ -92,7 +92,7 @@ export default function AIClubPage() {
                     style={{
                       left: "43px",
                       top: "56px",
-                      paddingLeft: "26px",
+                      paddingLeft: "25px",
                     }}
                   >
                     <span
