@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import html2canvas from "html2canvas";
 
 export default function FinalResultPage() {
   const location = useLocation();
@@ -58,7 +59,7 @@ export default function FinalResultPage() {
         console.log("Download successful for:", name);
       } catch (error) {
         console.error("Download failed:", error);
-        alert("حدث خطأ أ��ناء التحميل. يرجى المحاولة مرة أخرى.");
+        alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
       }
     }, 500);
   };
