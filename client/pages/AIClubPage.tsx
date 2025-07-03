@@ -91,7 +91,7 @@ export default function AIClubPage() {
                     className="absolute"
                     style={{
                       left: "45%",
-                      top: "20%",
+                      top: "17%",
                       transform: "translateX(-50%)",
                     }}
                   >
