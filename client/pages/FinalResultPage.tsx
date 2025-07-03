@@ -239,7 +239,7 @@ export default function FinalResultPage() {
                 </div>
                 {isGenerating && (
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded-2xl">
-                    <p className="text-white">جاري إنشاء الصورة...</p>
+                    <p className="text-white">جاري إنشاء ا��صورة...</p>
                   </div>
                 )}
               </div>
@@ -249,7 +249,12 @@ export default function FinalResultPage() {
                 {/* Download Button */}
                 <button
                   onClick={handleDownload}
-                  className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px] bg-green-500/20 hover:bg-green-500/30"
+                  disabled={isGenerating}
+                  className={`glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px] ${
+                    isGenerating
+                      ? "bg-gray-500/20 cursor-not-allowed opacity-50"
+                      : "bg-green-500/20 hover:bg-green-500/30 hover:bg-white/20"
+                  }`}
                 >
                   <span
                     style={{
@@ -262,7 +267,7 @@ export default function FinalResultPage() {
                       lineHeight: "100.909%",
                     }}
                   >
-                    تحميل الصورة
+                    {isGenerating ? "جاري التحميل..." : "تحميل الصورة"}
                   </span>
                 </button>
 
