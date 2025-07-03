@@ -63,6 +63,7 @@ export default function NextStep() {
                     fontWeight: "700",
                     lineHeight: "normal",
                     paddingRight: "-4px",
+                    paddingLeft: "-3px",
                   }}
                 >
                   هل انت من مستفيدين / اعضاء
@@ -77,7 +78,7 @@ export default function NextStep() {
                   className={`w-full glass-input rounded-full px-6 py-4 md:px-8 md:py-5 border transition-all duration-200 ${
                     selectedOption === "نادي الذكاء الاصطناعي"
                       ? "border-white/60 bg-white/25"
-                      : "border-white/30 hover:border-white/45 hover:bg-white/20"
+                      : "border-white/60 hover:border-white/45 hover:bg-white/20"
                   }`}
                 >
                   <span
@@ -101,7 +102,7 @@ export default function NextStep() {
                   className={`w-full glass-input rounded-full px-6 py-4 md:px-8 md:py-5 border transition-all duration-200 ${
                     selectedOption === "غير ذالك"
                       ? "border-white/60 bg-white/25"
-                      : "border-white/30 hover:border-white/45 hover:bg-white/20"
+                      : "border-white/60 hover:border-white/45 hover:bg-white/20"
                   }`}
                 >
                   <span
