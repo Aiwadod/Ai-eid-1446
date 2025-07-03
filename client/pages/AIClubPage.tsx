@@ -110,7 +110,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 2: الكرة الأرضية الليلية - نص في الوسط */}
+                {/* تص��يم 2: الكرة الأرضية الليلية - نص في الوسط */}
                 <button
                   onClick={() => handleDesignSelect(1)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -163,7 +163,7 @@ export default function AIClubPage() {
                     className="absolute"
                     style={{
                       left: "95px",
-                      top: "340px",
+                      top: "350px",
                       transform: "matrix(1, 0, 0, 1, -54.832, -33.5)",
                       padding: "7px 0 0 22px",
                       "@media (max-width: 640px)": {
