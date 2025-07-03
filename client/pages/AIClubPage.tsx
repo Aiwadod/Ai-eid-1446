@@ -110,7 +110,7 @@ export default function AIClubPage() {
                   </div>
                 </button>
 
-                {/* تصميم 2: الكرة الأرضية الليلية - ��ص في الوسط مع خلفية زرقاء */}
+                {/* تصميم 2: الكرة الأرضية الليلية - نص في الوسط مع خلفية زرقاء */}
                 <button
                   onClick={() => handleDesignSelect(1)}
                   className={`relative glass-input rounded-2xl p-0 border min-h-[300px] overflow-hidden transition-all duration-200 hover:scale-105 ${
@@ -202,7 +202,6 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
-                        textShadow: "1px 1px 2px rgba(255,255,255,0.8)",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
