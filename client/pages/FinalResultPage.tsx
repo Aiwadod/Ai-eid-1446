@@ -23,10 +23,21 @@ export default function FinalResultPage() {
   const handleDownload = () => {
     const canvas = canvasRef.current;
     if (canvas) {
-      const link = document.createElement("a");
-      link.download = `eid-design-${name || "design"}.png`;
-      link.href = canvas.toDataURL();
-      link.click();
+      // Wait a moment to ensure canvas is fully rendered
+      setTimeout(() => {
+        try {
+          const dataURL = canvas.toDataURL("image/png", 1.0);
+          const link = document.createElement("a");
+          link.download = `eid-design-${name || "design"}.png`;
+          link.href = dataURL;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } catch (error) {
+          console.error("Download failed:", error);
+          alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
+        }
+      }, 100);
     }
   };
 
