@@ -84,7 +84,7 @@ export default function OtherDesignsPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F6eaba692d0cb43efa6cb4146c46da6cd?format=webp&width=800"
-                    alt="تصميم ال��باني التراثية 1"
+                    alt="تصميم المباني التراثية 1"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
@@ -93,6 +93,7 @@ export default function OtherDesignsPage() {
                       left: "45%",
                       top: "18%",
                       transform: "translateX(-50%)",
+                      paddingLeft: "4px",
                     }}
                   >
                     <span
@@ -226,7 +227,7 @@ export default function OtherDesignsPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F52b65e90e4684ca28f041fd9f404c133?format=webp&width=800"
-                    alt="تصميم الفوانيس النهارية"
+                    alt="تصميم ا��فوانيس النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
@@ -283,7 +284,7 @@ export default function OtherDesignsPage() {
                         fontStyle: "normal",
                       }}
                     >
-                      {name || "عبدالوهاب عبدالع��يز"}
+                      {name || "عبدالوهاب عبدالعزيز"}
                     </span>
                   </div>
                 </button>
