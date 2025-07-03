@@ -84,7 +84,7 @@ export default function OtherDesignsPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F6eaba692d0cb43efa6cb4146c46da6cd?format=webp&width=800"
-                    alt="تصميم المباني الت��اثية 1"
+                    alt="تصميم المباني التراثية 1"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
@@ -200,7 +200,14 @@ export default function OtherDesignsPage() {
                     alt="تصميم الكرة ��لأرضية الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-[58px] left-[52%] transform -translate-x-1/2">
+                  <div
+                    className="absolute transform -translate-x-1/2"
+                    style={{
+                      left: "107px",
+                      top: "61px",
+                      paddingLeft: "-4px",
+                    }}
+                  >
                     <span
                       style={{
                         color: "#FFF",
@@ -227,7 +234,7 @@ export default function OtherDesignsPage() {
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F52b65e90e4684ca28f041fd9f404c133?format=webp&width=800"
-                    alt="تصميم الفوانيس النهارية"
+                    alt="تصميم الف��انيس النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
