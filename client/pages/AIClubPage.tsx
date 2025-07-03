@@ -71,7 +71,7 @@ export default function AIClubPage() {
                 </h1>
               </div>
 
-              {/* Content Grid - تصاميم قابلة للاختيار */}
+              {/* Content Grid - تص��ميم قابلة للاختيار */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* تصميم 1: الفوانيس - نص في الأعلى يسار */}
                 <button
@@ -201,7 +201,7 @@ export default function AIClubPage() {
                     alt="تصميم الأطفال مع الخراف النهارية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute top-24 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
                     <span
                       style={{
                         color: "#FFF",
