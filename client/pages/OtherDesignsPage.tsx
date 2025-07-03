@@ -277,7 +277,7 @@ export default function OtherDesignsPage() {
                   <div
                     className="absolute transform -translate-x-1/2"
                     style={{
-                      left: "120px",
+                      left: "102px",
                       top: "280px",
                       padding: "-4px 0 0 2px",
                     }}
@@ -316,7 +316,7 @@ export default function OtherDesignsPage() {
                       lineHeight: "100.909%",
                     }}
                   >
-                    السابق
+                    السا��ق
                   </span>
                 </button>
 
