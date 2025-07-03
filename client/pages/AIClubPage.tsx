@@ -231,7 +231,13 @@ export default function AIClubPage() {
                     alt="تصميم النافورة الليلية"
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                  <div
+                    className="absolute transform -translate-x-1/2"
+                    style={{
+                      top: "68px",
+                      left: "52%",
+                    }}
+                  >
                     <span
                       style={{
                         color: "#FFF",
