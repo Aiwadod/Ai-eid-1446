@@ -125,7 +125,7 @@ export default function AIClubPage() {
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <div
-                    className="absolute top-[21.5%] left-[46.2%] transform -translate-x-1/2 -translate-y-1/2"
+                    className="absolute top-[21.5%] left-[45.8%] transform -translate-x-1/2 -translate-y-1/2"
                     style={{
                       paddingLeft: "-5px",
                     }}
