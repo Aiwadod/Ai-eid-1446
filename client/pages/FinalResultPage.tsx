@@ -20,6 +20,7 @@ export default function FinalResultPage() {
   const currentImage = designImages[selectedDesign];
   const currentPosition = textPositions[selectedDesign];
 
+  // Draw image and text on canvas for preview and download
   const drawImageWithText = () => {
     const canvas = canvasRef.current;
     if (!canvas || !currentImage || !currentPosition || !name) return;
@@ -28,52 +29,44 @@ export default function FinalResultPage() {
     if (!ctx) return;
 
     const img = new Image();
+    img.crossOrigin = "anonymous";
     img.onload = () => {
-      // Set canvas size
       canvas.width = 800;
       canvas.height = 800;
 
-      // Draw background image
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-      // Draw text
       ctx.font = "bold 28px Arial, sans-serif";
       ctx.fillStyle = currentPosition.color || "#FFFFFF";
       ctx.strokeStyle = "rgba(0, 0, 0, 0.8)";
       ctx.lineWidth = 2;
       ctx.textAlign = "center";
 
-      // Calculate text position
       let x = canvas.width / 2;
       let y = canvas.height / 2;
 
-      if (
-        typeof currentPosition.left === "string" &&
-        currentPosition.left.includes("%")
-      ) {
+      // Calculate position as before...
+      if (typeof currentPosition.left === "string" && currentPosition.left.includes("%")) {
         x = (parseFloat(currentPosition.left) / 100) * canvas.width;
       } else if (typeof currentPosition.left === "string") {
         x = (parseFloat(currentPosition.left) / 800) * canvas.width;
       }
 
-      if (
-        typeof currentPosition.top === "string" &&
-        currentPosition.top.includes("%")
-      ) {
+      if (typeof currentPosition.top === "string" && currentPosition.top.includes("%")) {
         y = (parseFloat(currentPosition.top) / 100) * canvas.height;
       } else if (typeof currentPosition.top === "string") {
-        y =
-          (parseFloat(currentPosition.top.replace("px", "")) / 800) *
-          canvas.height;
+        y = (parseFloat(currentPosition.top.replace("px", "")) / 800) * canvas.height;
       }
 
-      // Draw text with stroke and fill
+      // Add margin from top (e.g., 80px)
+      y += 80;
+
       ctx.strokeText(name, x, y);
       ctx.fillText(name, x, y);
 
       setImageLoaded(true);
     };
-
     img.src = currentImage;
   };
 
@@ -85,27 +78,83 @@ export default function FinalResultPage() {
     }
   };
 
-  const handleDownload = () => {
+  // Download the selected card image
+  const handleDownload = async () => {
+    alert("جاري تحميل الصورة...");
+
     const canvas = canvasRef.current;
-    if (!canvas || !imageLoaded) {
+    if (!canvas) {
       alert("يرجى الانتظار حتى يتم تحميل الصورة أولاً");
       return;
     }
 
-    try {
+    if (!currentImage || !currentPosition) {
+      alert("لا يوجد تصميم محدد للتحميل");
+      return;
+    }
+
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      canvas.width = 800;
+      canvas.height = 800;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        alert("تعذر الحصول على سياق الرسم");
+        return;
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      ctx.font = "bold 28px Arial, sans-serif";
+      ctx.fillStyle = currentPosition.color || "#FFFFFF";
+      ctx.strokeStyle = "rgba(15, 15, 15, 0.8)";
+      ctx.lineWidth = 2;
+      ctx.textAlign = "center";
+
+      let x = canvas.width / 2;
+      let y = canvas.height / 2;
+
+      if (typeof currentPosition.left === "string" && currentPosition.left.includes("%")) {
+        x = (parseFloat(currentPosition.left) / 100) * canvas.width;
+      } else if (typeof currentPosition.left === "string") {
+        x = (parseFloat(currentPosition.left) / 800) * canvas.width;
+      }
+
+      if (typeof currentPosition.top === "string" && currentPosition.top.includes("%")) {
+        y = (parseFloat(currentPosition.top) / 100) * canvas.height;
+      } else if (typeof currentPosition.top === "string") {
+        y = (parseFloat(currentPosition.top.replace("px", "")) / 800) * canvas.height;
+      }
+
+      y += 120;
+
+      ctx.strokeText(name, x, y);
+      ctx.fillText(name, x, y);
+
+      // Download the selected card
       const dataURL = canvas.toDataURL("image/png", 1.0);
       const link = document.createElement("a");
-      link.download = `eid-design-${name.replace(/\s+/g, "-") || "design"}.png`;
+      link.download = `eid-design-${selectedDesign + 1}-${name.replace(/\s+/g, "-") || "design"}.png`;
       link.href = dataURL;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    } catch (error) {
-      console.error("Download failed:", error);
-      alert("حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.");
-    }
+
+      // After download, navigate to the new page
+      setTimeout(() => {
+        navigate("/download-complete");
+      }, 500); // short delay to ensure download triggers
+    };
+    img.onerror = () => {
+      alert("تعذر تحميل الصورة المحددة");
+    };
+    img.src = currentImage;
   };
 
+  // Share the card image (if supported)
   const handleShare = () => {
     const canvas = canvasRef.current;
     if (!canvas || !imageLoaded) {
@@ -131,6 +180,10 @@ export default function FinalResultPage() {
       }
     });
   };
+
+  // Draw preview when image loads
+  // This ensures the canvas is ready for download/share
+  // You can also use useEffect if you want to auto-draw on mount
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -191,7 +244,7 @@ export default function FinalResultPage() {
 
               {/* Preview with Image and Text Overlay */}
               <div className="relative glass-input rounded-2xl p-4 border border-white/30">
-                <div className="relative w-[400px] h-[400px] mx-auto">
+                <div className="relative w-[235px] sm:w-[300px] md:w-[400px] h-[350px] sm:h-[480px] md:h-[500px] mx-auto">
                   {currentImage && currentPosition && (
                     <>
                       <img
@@ -211,13 +264,11 @@ export default function FinalResultPage() {
                         }}
                       >
                         <span
+                          className="block font-bold text-[10px] sm:text-[18px] mt-2"
                           style={{
                             color: currentPosition.color || "#FFF",
                             fontFamily: "KO Aynama, Arial, sans-serif",
-                            fontSize: "18px",
-                            fontWeight: "bold",
                             textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
-                            display: "block",
                             whiteSpace: "nowrap",
                           }}
                         >
@@ -304,7 +355,10 @@ export default function FinalResultPage() {
 
                 {/* New Design Button */}
                 <button
-                  onClick={() => navigate("/")}
+                  onClick={() => {
+                    alert("سيتم الانتقال لإنشاء تصميم جديد!");
+                    navigate("/");
+                  }}
                   className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px]"
                 >
                   <span

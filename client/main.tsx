@@ -12,7 +12,7 @@ import AIClubPage from "./pages/AIClubPage";
 import OtherDesignsPage from "./pages/OtherDesignsPage";
 import FinalResultPage from "./pages/FinalResultPage";
 import NotFound from "./pages/NotFound";
-
+import DownloadCompletePage from "./pages/DownloadCompletePage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/ai-club" element={<AIClubPage />} />
           <Route path="/other-designs" element={<OtherDesignsPage />} />
           <Route path="/final-result" element={<FinalResultPage />} />
+          <Route path="/download-complete" element={<DownloadCompletePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

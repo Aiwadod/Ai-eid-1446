@@ -111,13 +111,13 @@ export default function AIClubPage() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F0f6d408a380b4e768b567e471bda4422?format=webp&width=800"
                     alt="تصميم الفوانيس"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
                     className="absolute"
                     style={{
                       left: "45%",
-                      top: "18%",
+                      top: "58%",
                       transform: "translateX(-50%)",
                     }}
                   >
@@ -148,7 +148,7 @@ export default function AIClubPage() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe7a8bc6e60074702a35620eb622af786?format=webp&width=800"
                     alt="تصميم الكرة الأرضية الليلية"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
                     className="absolute top-[21.5%] left-[45.5%] transform -translate-x-1/2 -translate-y-1/2"
@@ -183,7 +183,7 @@ export default function AIClubPage() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F4573685d3b664853845521b00c7c1af4?format=webp&width=800"
                     alt="تصميم المباني التراثية"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
                     className="absolute"
@@ -227,7 +227,7 @@ export default function AIClubPage() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fe51bcf82f4d14907a2aef17e28483c47?format=webp&width=800"
                     alt="تصميم الأطفال مع الخراف النهارية"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
                     className="absolute top-[58px] left-[52%] transform -translate-x-1/2"
@@ -262,7 +262,7 @@ export default function AIClubPage() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2Fbf958ed6b18d4d95b00b7b6ff14f71dd?format=webp&width=800"
                     alt="تصميم النافورة الليلية"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
                     className="absolute transform -translate-x-1/2"
@@ -281,7 +281,7 @@ export default function AIClubPage() {
                         fontStyle: "normal",
                       }}
                     >
-                      {name || "عبدالوهاب عبدالعزيز"}
+                      {name || "عبدوالوهاب عبدالعزيز"}
                     </span>
                   </div>
                 </button>
@@ -298,7 +298,7 @@ export default function AIClubPage() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F86886dbec71c4db7bac2e1c32e664c91?format=webp&width=800"
                     alt="تصميم الكرة الأرضية مع الأطف��ل"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
                     className="absolute top-14 left-[48%] transform -translate-x-1/2"
@@ -316,7 +316,7 @@ export default function AIClubPage() {
                         fontStyle: "normal",
                       }}
                     >
-                      {name || "عبدالوهاب عبدالعزيز"}
+                      {name || "عبدوالوهاب عبدالعزيز"}
                     </span>
                   </div>
                 </button>
