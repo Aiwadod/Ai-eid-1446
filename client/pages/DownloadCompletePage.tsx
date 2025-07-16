@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function DownloadCompletePage() {
   const navigate = useNavigate();
 
-  // Responsive style for the glassy card
-  const isMobile = window.innerWidth <= 600;
+  // Dynamically update isMobile on resize
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" && window.innerWidth <= 600
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const cardStyle = {
     marginTop: isMobile ? 40 : 150,
     background: "rgba(255,255,255,0.25)",
@@ -14,10 +25,16 @@ export default function DownloadCompletePage() {
     backdropFilter: "blur(8px)",
     WebkitBackdropFilter: "blur(8px)",
     border: "1px solid rgba(255,255,255,0.18)",
-    width: isMobile ? "90vw" : 500,
+    width: isMobile ? "92vw" : 500,
     height: isMobile ? "auto" : 400,
     padding: isMobile ? "20px 6px" : "32px 16px",
     textAlign: "center",
+  };
+
+  const logoStyle = {
+    height: isMobile ? 50 : 80,
+    width: "auto",
+    maxWidth: "90vw",
   };
 
   return (
@@ -38,13 +55,13 @@ export default function DownloadCompletePage() {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          padding: "32px 0 0 0",
+          padding: isMobile ? "16px 0 0 0" : "32px 0 0 0",
         }}
       >
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/44601a5eb5d1394f281854f475784406e2daf9df?width=1009"
           alt="Logo"
-          style={{ height: 80 }}
+          style={logoStyle}
         />
       </div>
 
@@ -53,10 +70,10 @@ export default function DownloadCompletePage() {
         <div
           style={{
             color: "#fff",
-            fontSize: 37,
+            fontSize: isMobile ? 24 : 37,
             fontWeight: 700,
             marginBottom: 12,
-            marginTop: 50,
+            marginTop: isMobile ? 20 : 50,
             fontFamily: "Arial, sans-serif",
           }}
         >
@@ -65,7 +82,7 @@ export default function DownloadCompletePage() {
         <div
           style={{
             color: "#fff",
-            fontSize: 16,
+            fontSize: isMobile ? 13 : 16,
             fontWeight: 400,
             marginBottom: 8,
             fontFamily: "Arial, sans-serif",
@@ -76,7 +93,7 @@ export default function DownloadCompletePage() {
         <div
           style={{
             color: "#fff",
-            fontSize: 14,
+            fontSize: isMobile ? 11 : 14,
             fontWeight: 400,
             fontFamily: "Arial, sans-serif",
             opacity: 0.85,
@@ -89,12 +106,12 @@ export default function DownloadCompletePage() {
           onClick={() => navigate("/")}
           style={{
             marginTop: 16,
-            padding: "12px 32px",
+            padding: isMobile ? "10px 18px" : "12px 32px",
             borderRadius: 24,
             border: "none",
             background: "rgba(255, 255, 255, 0.25)",
             color: "#fff",
-            fontSize: 18,
+            fontSize: isMobile ? 15 : 18,
             fontWeight: 600,
             cursor: "pointer",
             boxShadow: "0 2px 8px rgba(30,107,184,0.15)",

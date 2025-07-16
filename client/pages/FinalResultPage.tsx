@@ -268,7 +268,7 @@ export default function FinalResultPage() {
                           style={{
                             color: currentPosition.color || "#FFF",
                             fontFamily: "KO Aynama, Arial, sans-serif",
-                            textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
+                            textShadow: "2px 2px 4px rgba(17, 17, 17, 0.8)",
                             whiteSpace: "nowrap",
                           }}
                         >

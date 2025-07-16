@@ -5,9 +5,9 @@ import path from "path";
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "server/start.ts"),
+      entry: path.resolve(__dirname, "server/node-build.ts"),
       name: "server",
-      fileName: "start",
+      fileName: "production",
       formats: ["es"],
     },
     outDir: "dist/server",
