@@ -257,19 +257,20 @@ export default function FinalResultPage() {
                       <div
                         className="absolute pointer-events-none"
                         style={{
-                          left: currentPosition.left || "50%",
-                          top: currentPosition.top || "50%",
+                          top: "80px",
+                          left: "34%",
                           transform: "translateX(-50%)",
                           textAlign: "center",
                         }}
                       >
                         <span
-                          className="block font-bold text-[10px] sm:text-[18px] mt-2"
+                          className="block font-bold text-[10px] sm:text-[18px] ml-[100px] mt-2"
                           style={{
                             color: currentPosition.color || "#FFF",
                             fontFamily: "KO Aynama, Arial, sans-serif",
                             textShadow: "2px 2px 4px rgba(17, 17, 17, 0.8)",
                             whiteSpace: "nowrap",
+                            // border: "solid 2px red"
                           }}
                         >
                           {name}
@@ -336,7 +337,7 @@ export default function FinalResultPage() {
                 {/* Back Button */}
                 <button
                   onClick={handleBack}
-                  className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[48px] min-w-[120px]"
+                  className="glass-button rounded-full px-8 py-3 sm:px-12 sm:py-3 md:px-16 md:py-4 border border-white/30 transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation min-h-[38px] min-w-[120px]"
                 >
                   <span
                     style={{

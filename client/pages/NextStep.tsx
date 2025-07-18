@@ -135,8 +135,7 @@ export default function NextStep() {
                   <span
                     style={{
                       color: "rgba(255, 255, 255, 0.75)",
-                      fontFamily:
-                        "The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
+                      fontFamily:"The Year of The Camel, Scheherazade New, Noto Naskh Arabic, Amiri, Cairo, system-ui, sans-serif",
                       fontSize: "20px",
                       fontStyle: "normal",
                       fontWeight: "400",

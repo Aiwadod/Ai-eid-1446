@@ -30,7 +30,7 @@ export default function AIClubPage() {
     const textPositions = [
       { left: "45%", top: "18%", color: "#CD7D25" },
       { left: "45.5%", top: "21.5%", color: "#FFF" },
-      { left: "96px", top: "306px", color: "#FFF" },
+      { left: "350px", top: "610px", color: "#FFF" },
       { left: "52%", top: "58px", color: "#FFF" },
       { left: "45%", top: "65px", color: "#FFF" },
       { left: "48%", top: "56px", color: "#FFF" },
@@ -117,7 +117,7 @@ export default function AIClubPage() {
                     className="absolute"
                     style={{
                       left: "45%",
-                      top: "58%",
+                      top: "20%",
                       transform: "translateX(-50%)",
                     }}
                   >
@@ -129,6 +129,11 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        
+                        
+                        
+                        
+                        
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -164,6 +169,8 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        
+                        
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -183,21 +190,14 @@ export default function AIClubPage() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Ff31aa0067f7240bca8b84a2d6d209919%2F4573685d3b664853845521b00c7c1af4?format=webp&width=800"
                     alt="تصميم المباني التراثية"
-                    className="w-full h-full object-cover rounded-2xl mx-auto"
+                    className="w-full h-[350px] object-cover rounded-2xl mx-auto"
                   />
                   <div
-                    className="absolute"
+                    className="absolute transform -translate-x-1/2"
                     style={{
-                      left: "96px",
-                      top: "306px",
-                      transform: "matrix(1, 0, 0, 1, -54.832, -33.5)",
-                      width: "103px",
-                      padding: "7px 0 0 19px",
+                      top: "315px",
+                      left: "45%",
                       textAlign: "center",
-                      "@media (max-width: 640px)": {
-                        top: "370px",
-                        left: "113px",
-                      },
                     }}
                   >
                     <span
@@ -208,6 +208,7 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        // border:"solid 1px red",
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -230,7 +231,7 @@ export default function AIClubPage() {
                     className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
-                    className="absolute top-[58px] left-[52%] transform -translate-x-1/2"
+                    className="absolute top-[70px] left-[52%] transform -translate-x-1/2"
                     style={{
                       textAlign: "center",
                     }}
@@ -243,6 +244,9 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        
+                        
+                        
                       }}
                     >
                       {name || "عبدالوهاب عبدالعزيز"}
@@ -267,7 +271,7 @@ export default function AIClubPage() {
                   <div
                     className="absolute transform -translate-x-1/2"
                     style={{
-                      top: "65px",
+                      top: "80px",
                       left: "45%",
                     }}
                   >
@@ -279,6 +283,9 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        // border: "solid 2px red"
+                                               
+                        
                       }}
                     >
                       {name || "عبدوالوهاب عبدالعزيز"}
@@ -301,7 +308,7 @@ export default function AIClubPage() {
                     className="w-full h-full object-cover rounded-2xl mx-auto"
                   />
                   <div
-                    className="absolute top-14 left-[48%] transform -translate-x-1/2"
+                    className="absolute top-[21%] left-[48%] transform -translate-x-1/2"
                     style={{
                       paddingLeft: "-5px",
                     }}
@@ -314,6 +321,8 @@ export default function AIClubPage() {
                         fontSize: "16px",
                         fontWeight: "500",
                         fontStyle: "normal",
+                        // border:"solid 1px red",
+                        
                       }}
                     >
                       {name || "عبدوالوهاب عبدالعزيز"}
