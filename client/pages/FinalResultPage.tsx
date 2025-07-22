@@ -31,8 +31,8 @@ export default function FinalResultPage() {
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.onload = () => {
-      canvas.width = 800;
-      canvas.height = 800;
+      canvas.width = 550;
+      canvas.height = 700;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -50,7 +50,7 @@ export default function FinalResultPage() {
       if (typeof currentPosition.left === "string" && currentPosition.left.includes("%")) {
         x = (parseFloat(currentPosition.left) / 100) * canvas.width;
       } else if (typeof currentPosition.left === "string") {
-        x = (parseFloat(currentPosition.left) / 800) * canvas.width;
+        x = (parseFloat(currentPosition.left) / 550) * canvas.width;
       }
 
       if (typeof currentPosition.top === "string" && currentPosition.top.includes("%")) {
@@ -96,8 +96,8 @@ export default function FinalResultPage() {
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.onload = () => {
-      canvas.width = 800;
-      canvas.height = 800;
+      canvas.width = 550;
+      canvas.height = 700;
 
       const ctx = canvas.getContext("2d");
       if (!ctx) {
@@ -285,7 +285,7 @@ export default function FinalResultPage() {
               <canvas
                 ref={canvasRef}
                 style={{ display: "none" }}
-                width={800}
+                width={550}
                 height={800}
               />
 
